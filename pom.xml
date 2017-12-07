@@ -70,13 +70,14 @@
         <url>https://github.com/softvision-dev/webpdf-ant</url>
         <connection>scm:git:git://github.com/softvision-dev/webpdf-ant.git</connection>
         <developerConnection>scm:git:git@github.com:softvision-dev/webpdf-ant.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
         <repository>
-            <id>webpdf-wsclient</id>
-            <name>webpdf-wsclient</name>
-            <url>https://github.com/softvision-dev/webpdf-wsclient</url>
+            <id>webpdf-wsclient-snapshot</id>
+            <name>webpdf-wsclient-snapshot</name>
+            <url>file:///${project.basedir}/maven-repository</url>
         </repository>
     </repositories>
 
@@ -101,10 +102,15 @@
             <artifactId>commons-io</artifactId>
             <version>2.5</version>
         </dependency>
+<!--        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+        </dependency>-->
         <dependency>
             <groupId>net.webpdf.wsclient</groupId>
             <artifactId>webpdf-wsclient</artifactId>
-            <version></version>
+            <version>1.0.0-20170928.121633-5</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

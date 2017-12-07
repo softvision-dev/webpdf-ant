@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.179" tests="17" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.161" tests="17" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -42,7 +42,7 @@
     <property name="file.encoding" value="UTF-8"/>
     <property name="password" value="Wahrheit0312"/>
     <property name="user.name" value="cap"/>
-    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_60\jre"/>
@@ -63,21 +63,21 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testOtherResourceCollection" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.027"/>
+  <testcase name="testOtherResourceCollection" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.016"/>
   <testcase name="testSetInvalidTargetDir" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0"/>
-  <testcase name="testMapFileSet" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.025"/>
-  <testcase name="testSetInvalidTempDir" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0"/>
-  <testcase name="testMapWithoutMapper" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.093"/>
-  <testcase name="testNonExistentResource" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.001"/>
+  <testcase name="testMapFileSet" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.023"/>
+  <testcase name="testSetInvalidTempDir" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.001"/>
+  <testcase name="testMapWithoutMapper" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.089"/>
+  <testcase name="testNonExistentResource" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.002"/>
   <testcase name="testMapWithMapper" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.005"/>
   <testcase name="testMapDirectory" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.004"/>
   <testcase name="testMapInexistentResource" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.002"/>
-  <testcase name="testUseSourceVar" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.009"/>
+  <testcase name="testUseSourceVar" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.007"/>
   <testcase name="testInvalidMapper" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0"/>
   <testcase name="testUseNonExistentSourceVar" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.001"/>
-  <testcase name="testSetTempDir" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0"/>
-  <testcase name="testMapFileRessource" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.004"/>
-  <testcase name="testSetTarget" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.001"/>
-  <testcase name="testUseTargetVar" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.002"/>
+  <testcase name="testSetTempDir" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.001"/>
+  <testcase name="testMapFileRessource" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.003"/>
+  <testcase name="testSetTarget" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.002"/>
+  <testcase name="testUseTargetVar" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0.001"/>
   <testcase name="testSetTargetDir" classname="net.webpdf.ant.task.files.IterativeTaskFileMapTest" time="0"/>
 </testsuite>

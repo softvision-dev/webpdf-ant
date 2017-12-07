@@ -42,7 +42,7 @@
     <property name="file.encoding" value="UTF-8"/>
     <property name="password" value="Wahrheit0312"/>
     <property name="user.name" value="cap"/>
-    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_60\jre"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="net.webpdf.ant.task.xml.XMLElementTest" time="0.131" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="net.webpdf.ant.task.xml.XMLElementTest" time="0.054" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -42,7 +42,7 @@
     <property name="file.encoding" value="UTF-8"/>
     <property name="password" value="Wahrheit0312"/>
     <property name="user.name" value="cap"/>
-    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.5.2.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2017.3\lib\idea_rt.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_60\jre"/>
@@ -63,7 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testPrepareConfiguration" classname="net.webpdf.ant.task.xml.XMLElementTest" time="0.13"/>
+  <testcase name="testPrepareConfiguration" classname="net.webpdf.ant.task.xml.XMLElementTest" time="0.048"/>
   <testcase name="testParseNull" classname="net.webpdf.ant.task.xml.XMLElementTest" time="0"/>
   <testcase name="testParseUnknownElement" classname="net.webpdf.ant.task.xml.XMLElementTest" time="0.001"/>
 </testsuite>

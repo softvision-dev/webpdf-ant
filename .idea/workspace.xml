@@ -44,20 +44,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d996964b-8f35-4516-8397-4fde8280979e" name="WEBPDF-917 Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache" comment="WEBPDF-917 Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_webpdf_wsclient_webpdf_wsclient.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_6.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_3.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/B.pdf" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/SVD.png" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/test.jpg" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/test2.jpg" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/webPDF_Logo.jpeg" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_1.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/maven-metadata.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/maven-metadata.xml.md5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/maven-metadata.xml.sha1" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5.jar.md5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5.jar.sha1" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5.pom" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5.pom.md5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5.pom.sha1" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/maven-metadata.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/maven-metadata.xml.md5" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/maven-repository/net/webpdf/wsclient/webpdf-wsclient/maven-metadata.xml.sha1" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_1.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_webpdf_wsclient_webpdf_wsclient_1_0_0_SNAPSHOT.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_6.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_webpdf_wsclient_webpdf_wsclient_1_0_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_webpdf_wsclient_webpdf_wsclient_1_0_0_SNAPSHOT.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_6.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_3.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_6.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_3.xml" />
       <change beforePath="$PROJECT_DIR$/examples/attachFile.xml" afterPath="$PROJECT_DIR$/examples/attachFile.xml" />
       <change beforePath="$PROJECT_DIR$/examples/complex.xml" afterPath="$PROJECT_DIR$/examples/complex.xml" />
       <change beforePath="$PROJECT_DIR$/examples/convertAndAnnotate.xml" afterPath="$PROJECT_DIR$/examples/convertAndAnnotate.xml" />
@@ -77,6 +98,7 @@
       <change beforePath="$PROJECT_DIR$/examples/data/input/sub/product-catalog.pdf" afterPath="" />
       <change beforePath="$PROJECT_DIR$/examples/variables.xml" afterPath="$PROJECT_DIR$/examples/variables.xml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170928.121633-5.jar" afterPath="$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170928.121633-5.jar" />
       <change beforePath="$PROJECT_DIR$/webPDF-task.iml" afterPath="$PROJECT_DIR$/webPDF-task.iml" />
     </list>
     <list readonly="true" id="aae8c836-f620-4bf2-b172-341cd93541af" name="Default" comment="" />
@@ -389,83 +411,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="XMLAttribute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/xml/XMLAttribute.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XMLElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/xml/XMLElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1908">
-              <caret line="116" column="39" lean-forward="true" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AntAccess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/AntAccess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-301">
-              <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskConfiguration.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="e#1059#1060#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskIntf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskIntf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/GroupTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1165">
-              <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+            <state relative-caret-position="234">
+              <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -474,8 +424,8 @@
       <file leaf-file-name="OperationTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+            <state relative-caret-position="-492">
+              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -484,8 +434,8 @@
       <file leaf-file-name="WebPDFTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/WebPDFTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3361">
-              <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+            <state relative-caret-position="820">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -559,7 +509,6 @@
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/TestWebPDFurl.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/TestResources.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/TestArguments.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/files/IterativeTaskFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/AntAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/GroupTask.java" />
@@ -568,11 +517,12 @@
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/GroupTaskIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/WebPDFTaskIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/OperationTaskIntegrationTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/examples/complex.xml" />
         <option value="$PROJECT_DIR$/examples/attachFile.xml" />
         <option value="$PROJECT_DIR$/examples/convertAndAnnotate.xml" />
         <option value="$PROJECT_DIR$/examples/variables.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -630,8 +580,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1672" />
-    <option name="y" value="-8" />
+    <option name="x" value="-23" />
+    <option name="y" value="3" />
     <option name="width" value="1696" />
     <option name="height" value="1026" />
   </component>
@@ -653,22 +603,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="webPDF-Ant" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ant-task" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ant-task" type="616d4139:PackageViewModuleNode" />
-              <item name="net.webpdf.ant" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -705,8 +639,24 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webPDF-Ant" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ant-task" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ant-task" type="616d4139:PackageViewModuleNode" />
+              <item name="net.webpdf.ant" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -728,6 +678,58 @@
             <path>
               <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
               <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-repository" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-repository" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="webpdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-repository" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="webpdf" type="462c0819:PsiDirectoryNode" />
+              <item name="wsclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-repository" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="webpdf" type="462c0819:PsiDirectoryNode" />
+              <item name="wsclient" type="462c0819:PsiDirectoryNode" />
+              <item name="webpdf-wsclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-repository" type="462c0819:PsiDirectoryNode" />
+              <item name="net" type="462c0819:PsiDirectoryNode" />
+              <item name="webpdf" type="462c0819:PsiDirectoryNode" />
+              <item name="wsclient" type="462c0819:PsiDirectoryNode" />
+              <item name="webpdf-wsclient" type="462c0819:PsiDirectoryNode" />
+              <item name="1.0.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -750,65 +752,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ant" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ant" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ant" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="credentials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ant" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ant" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="logging" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ant" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="variable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webPDF-ant-DEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ant" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
@@ -853,8 +796,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webPDF-8.0-development" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion.SSH" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3418647" />
@@ -881,22 +824,22 @@
       <recent name="main.ant" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\development\webPDF-ant-DEV\maven-repository\net\webPDF" />
+      <recent name="C:\development\webPDF-ant-DEV\src\main\resources\net\webpdf\wsclient" />
       <recent name="C:\development\webPDF-ant-DEV\examples\data\input" />
       <recent name="C:\development\webPDF-ant-DEV\src\test\java\net\webpdf\ant" />
       <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant" />
-      <recent name="C:\development\webPDF-ant-DEV" />
-      <recent name="C:\development\webPDF-ant-DEV\repo" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\development\webPDF-ant-DEV\maven-repository" />
+      <recent name="C:\development\webPDF-ant-DEV\maven-repository\repository" />
       <recent name="C:\development\webPDF-ant-DEV\examples\data\input" />
       <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant\task\files" />
       <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant" />
-      <recent name="C:\development\webPDF-ant-DEV\src\test\resources" />
-      <recent name="C:\development\webPDF-ant-DEV\src\main\resources\net\webpdf\ant" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -911,7 +854,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.variablesExample">
+  <component name="RunManager" selected="Application.attachFileExample">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -1234,7 +1177,9 @@
       <workItem from="1512568930659" duration="1996000" />
       <workItem from="1512571094616" duration="3370000" />
       <workItem from="1512575552238" duration="641000" />
-      <workItem from="1512633401949" duration="2359000" />
+      <workItem from="1512633401949" duration="5787000" />
+      <workItem from="1512642412994" duration="885000" />
+      <workItem from="1512648428700" duration="3302000" />
     </task>
     <task id="WEBPDF-917" summary="Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache">
       <created>1501682533361</created>
@@ -1287,12 +1232,6 @@
     </servers>
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_webPDF-task - 2017.10.12 at 09h 21m 22s.xml">
-      <configuration name="All in webPDF-task" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_webPDF-task - 2017.10.12 at 09h 35m 42s.xml">
-      <configuration name="All in webPDF-task" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_webPDF-task - 2017.10.12 at 09h 45m 47s.xml">
       <configuration name="All in webPDF-task" configurationId="JUnit" />
     </history-entry>
@@ -1303,6 +1242,12 @@
       <configuration name="All in webPDF-task" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_webPDF-task - 2017.12.06 at 15h 08m 55s.xml">
+      <configuration name="All in webPDF-task" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_webPDF-task - 2017.12.07 at 13h 22m 38s.xml">
+      <configuration name="All in webPDF-task" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_webPDF-task - 2017.12.07 at 13h 25m 51s.xml">
       <configuration name="All in webPDF-task" configurationId="JUnit" />
     </history-entry>
     <history-entry file="OperationTaskIntegrationTest_testInvalidXMLElement - 2017.10.11 at 16h 59m 48s.xml">
@@ -1319,7 +1264,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398216000" />
+    <option name="totallyTimeSpent" value="405831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1331,40 +1276,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41834453" sideWeight="0.39547676" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136919" sideWeight="0.66450214" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26286355" sideWeight="0.44376528" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41834453" sideWeight="0.60452324" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41834453" sideWeight="0.11369193" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136919" sideWeight="0.66450214" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.48777506" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33435208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="YouTrack" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27811736" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.103300735" sideWeight="0.46331236" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46868008" sideWeight="0.75" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4082774" sideWeight="0.40953544" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41834453" sideWeight="0.8863081" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26286355" sideWeight="0.44376528" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.4828851" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34290954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46920493" sideWeight="0.75733495" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4082774" sideWeight="0.43031785" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15464547" sideWeight="0.33549783" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.4779951" order="1" side_tool="false" content_ui="tabs" />
@@ -1393,8 +1337,14 @@
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170928.121633-5.jar!/net/webpdf/wsclient/WebServiceFactory.class</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="180" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="180" />
+      <option name="time" value="181" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1408,83 +1358,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/task/credentials/CredentialsFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/task/variable/VariableMapTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-522">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar!/net/sf/antcontrib/property/Variable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_60/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="1782" column="21" lean-forward="false" selection-start-line="1782" selection-start-column="21" selection-end-line="1782" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/rules/TemporaryFolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="76" column="16" lean-forward="false" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/net/webpdf/wsclient/webpdf-wsclient/1.0.0-SNAPSHOT/webpdf-wsclient-1.0.0-20170928.121633-5-sources.jar!/net/webpdf/wsclient/WebService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.5/ant-1.9.5-sources.jar!/org/apache/tools/ant/PropertyHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="394" column="0" lean-forward="false" selection-start-line="394" selection-start-column="0" selection-end-line="394" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.5/ant-1.9.5-sources.jar!/org/apache/tools/ant/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1264">
-          <caret line="624" column="33" lean-forward="true" selection-start-line="624" selection-start-column="33" selection-end-line="624" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.5/commons-io-2.5-sources.jar!/org/apache/commons/io/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="1038" column="23" lean-forward="false" selection-start-line="1038" selection-start-column="23" selection-end-line="1038" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/WebPDFTaskIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2268">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/TestArgument.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1538,7 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1546,7 +1418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1579,21 +1450,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/data/input/bmw_435.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/data/input/donald-duck.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/data/input/bmw_435.jpg" />
+    <entry file="file://$PROJECT_DIR$/examples/data/input/donald-duck.png" />
     <entry file="file://$PROJECT_DIR$/examples/attachFile.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="685">
           <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1601,7 +1463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1609,7 +1470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
           <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1617,7 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-571">
           <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1629,19 +1488,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/credentials/NTCredentials.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1649,7 +1499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-251">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1657,7 +1506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="128" column="29" lean-forward="false" selection-start-line="128" selection-start-column="29" selection-end-line="128" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1665,7 +1513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2528">
           <caret line="171" column="22" lean-forward="false" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1673,7 +1520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-391">
           <caret line="32" column="11" lean-forward="false" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1681,7 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2803">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1689,7 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-247">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1697,7 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-53">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1705,7 +1548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1129">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1713,7 +1555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-751">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1721,7 +1562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1729,7 +1569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,14 +1576,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/xml/XMLElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1908">
-          <caret line="116" column="39" lean-forward="true" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
+          <caret line="116" column="39" lean-forward="false" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1759,59 +1597,147 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/Task.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301">
+        <state relative-caret-position="882">
           <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskIntf.java">
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170922.081111-4.jar!/net/webpdf/wsclient/WebServiceFactory.class" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-SNAPSHOT.jar!/net/webpdf/wsclient/WebServiceFactory.class" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170918.123038-1.jar!/META-INF/maven/net.webpdf.wsclient/webpdf-wsclient/pom.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskName.java">
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170918.123038-1.jar!/META-INF/maven/net.webpdf.wsclient/webpdf-wsclient/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="284">
+          <caret line="251" column="17" lean-forward="true" selection-start-line="251" selection-start-column="17" selection-end-line="251" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/GroupTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1165">
-          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+        <state relative-caret-position="388">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/WebPDFTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3361">
-          <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+        <state relative-caret-position="90">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskIntf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state relative-caret-position="388">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/TaskConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="388">
+          <caret line="87" column="1" lean-forward="false" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
           <folding>
-            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="false" />
+            <element signature="e#1059#1060#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170928.121633-5.jar!/net/webpdf/wsclient/WebServiceFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.5/ant-1.9.5-sources.jar!/org/apache/tools/ant/dispatch/DispatchUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="105" column="23" lean-forward="false" selection-start-line="105" selection-start-column="23" selection-end-line="105" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.5/ant-1.9.5-sources.jar!/org/apache/tools/ant/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="457" column="0" lean-forward="false" selection-start-line="457" selection-start-column="0" selection-end-line="457" selection-end-column="0" />
+          <folding>
+            <element signature="e#14658#14659#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.5/ant-1.9.5-sources.jar!/org/apache/tools/ant/RuntimeConfigurable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.5/ant-1.9.5-sources.jar!/org/apache/tools/ant/UnknownElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="301" column="0" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+          <folding>
+            <element signature="e#4420#4421#0" expanded="false" />
+            <element signature="e#4461#4462#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/WebPDFTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170928.121633-5.jar!/META-INF/maven/net.webpdf.wsclient/webpdf-wsclient/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4302">
+          <caret line="254" column="0" lean-forward="true" selection-start-line="254" selection-start-column="0" selection-end-line="266" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maven-repository/net/webPDF/wsclient/webpdf-wsclient/1.0.0/webpdf-wsclient-1.0.0.jar.lastUpdated">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-492">
+          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

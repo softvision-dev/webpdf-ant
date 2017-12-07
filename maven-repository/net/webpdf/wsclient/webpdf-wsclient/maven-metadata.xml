@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>net.webpdf.wsclient</groupId>
+  <artifactId>webpdf-wsclient</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20171207124648</lastUpdated>
+  </versioning>
+</metadata>
