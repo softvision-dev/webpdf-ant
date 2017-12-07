@@ -1,0 +1,35 @@
+package net.webpdf.ant;
+
+import net.webpdf.wsclient.WebServiceType;
+
+/**
+ * Contains options and configurations for the current specific webservice call.
+ */
+public class OperationConfiguration {
+
+    private final WebServiceType webServiceType;
+    private final String webServiceOptions;
+
+    /**
+     * Constructs a webservice configuration container for a single call to a webPDF webservice.
+     *
+     * @param webServiceOptions The operation object configuring all parameters and settings for the webservice call.
+     */
+    public OperationConfiguration(WebServiceType webServiceType, String webServiceOptions) {
+        this.webServiceType = webServiceType;
+        this.webServiceOptions = webServiceOptions;
+    }
+
+    WebServiceType getWebServiceType() {
+        return webServiceType;
+    }
+
+    /**
+     * Returns the parameters and settings for the webservice call.
+     *
+     * @return The parameters and settings for the webservice call.
+     */
+    String getOperationConfiguration() {
+        return webServiceOptions;
+    }
+}

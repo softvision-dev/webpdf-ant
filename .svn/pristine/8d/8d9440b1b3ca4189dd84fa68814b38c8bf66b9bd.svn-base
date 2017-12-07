@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="variablesExample" default="test" basedir="."
+         xmlns:webpdf="http://schema.webpdf.de/1.0/operation"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://schema.webpdf.de/1.0/operation http://schema.webpdf.de/1.0/operation/operation.xsd">
+
+    <taskdef resource="antlib.xml"
+             classpath="../build/webpdf-ant-1.0.0-SNAPSHOT.jar"/>
+
+    <property name="webPDFUrl" value="http://localhost:8080/webPDF"/>
+    <property name="usr" value="usr"/>
+    <property name="pwd" value="pwd"/>
+    <property name="tempDir" value="data/output/temp"/>
+    <property name="targetDir" value="data/output/out"/>
+    <path id="basedir.path">
+        <pathelement path="${basedir}"/>
+    </path>
+    <pathconvert targetos="unix" property="basedir.unix" refid="basedir.path"/>
+    <property name="testFile" value="${basedir.unix}/data/input/bmw_435.jpg"/>
+
+    <!-- selecting, converting and processing files in multiple steps, using variables -->
+    <target name="test">
+        <!-- clean output folder -->
+        <delete dir="data/output/out"/>
+        <mkdir dir="data/output/out"/>
+
+        <!-- Locate and configure webPDF server and execution context. -->
+        <webpdf serverurl="${webPDFUrl}" user="${usr}" password="${pwd}"
+                serverprotected="true" useauthorization="true"
+                tempdir="${tempDir}" mtom="true" targetdir="${targetDir}" failonerror="true">
+            <!-- use predefined file as input -->
+            <var name="in" role="INPUT" value="${testFile}"/>
+            <!-- store target file in variable "out" -->
+            <var name="out" role="OUTPUT"/>
+            <!-- configure a name mapping from source name to target name -->
+            <globmapper from="*.jpg" to="*.pdf"/>
+            <group>
+                <!-- convert the source document -->
+                <webpdf:operation>
+                    <webpdf:converter pages="1" compression="false" jpegQuality="100" reduceResolution="true"/>
+                </webpdf:operation>
+                <!-- Rotate the document -->
+                <webpdf:operation xmlns="http://schema.webpdf.de/1.0/operation">
+                    <webpdf:rotate degrees="180"/>
+                </webpdf:operation>
+            </group>
+            <!-- When terminating the webPDF task will write the final result to a target file, according to the
+             selected target file and name mapping - the target file will additionally be stored in the variable "out"-->
+        </webpdf>
+
+        <!-- Locate and configure webPDF server and execution context. -->
+        <webpdf serverurl="${webPDFUrl}" user="${usr}" password="${pwd}"
+                serverprotected="true" useauthorization="true"
+                tempdir="${tempDir}" mtom="true" targetdir="${targetDir}" failonerror="true">
+            <!-- use the stored output as input for this task -->
+            <var name="in" role="INPUT" value="${out}"/>
+            <!-- annotate the document -->
+            <group>
+                <webpdf:operation>
+                    <webpdf:annotation>
+                        <webpdf:add>
+                            <webpdf:text contents="Place thisTextAnnotation in separate step!"/>
+                        </webpdf:add>
+                    </webpdf:annotation>
+                </webpdf:operation>
+            </group>
+            <!-- When terminating the webPDF task will write the final result to a target file, according to the
+             selected target file and name mapping -->
+        </webpdf>
+        <!-- After the execution of this target, you should find new results in "tests\data\output\out" -->
+    </target>
+</project>

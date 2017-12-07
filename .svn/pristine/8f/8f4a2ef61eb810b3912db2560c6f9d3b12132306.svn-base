@@ -1,0 +1,13 @@
+<!--
+Taskdef summary for the webPDF-Ant project
+all tasks can be defined with the following tag:
+
+<taskdef resource="net/webpdf/ant/antlib.xml"/>
+
+-->
+
+<antlib>
+    <taskdef name="webpdf" classname="net.webpdf.ant.WebPDFTask"/>
+    <taskdef name="group" classname="net.webpdf.ant.GroupTask"/>
+    <taskdef name="var" classname="net.webpdf.ant.task.variable.Variable"/>
+</antlib>

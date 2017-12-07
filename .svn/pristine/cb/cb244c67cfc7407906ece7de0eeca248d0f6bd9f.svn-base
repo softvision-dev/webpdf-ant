@@ -1,0 +1,80 @@
+package net.webpdf.ant.task.xml;
+
+import net.webpdf.wsclient.WebServiceType;
+
+/**
+ * Provides a basic mapping from xml tag names to webPDF webservice types.
+ */
+public enum XMLNamedWSType {
+    BARCODE("barcode", WebServiceType.BARCODE),
+    CONVERTER("converter", WebServiceType.CONVERTER),
+    OCR("ocr", WebServiceType.OCR),
+    PDFA("pdfa", WebServiceType.PDFA),
+    SIGNATURE("signature", WebServiceType.SIGNATURE),
+    URL_CONVERTER("urlconverter", WebServiceType.URLCONVERTER),
+    ANNOTATION("annotation", WebServiceType.TOOLBOX),
+    ATTACHMENT("attachment", WebServiceType.TOOLBOX),
+    BILLING("billing", WebServiceType.TOOLBOX),
+    DELETE("delete", WebServiceType.TOOLBOX),
+    DESCRIPTION("description", WebServiceType.TOOLBOX),
+    EXTRACTION("extraction", WebServiceType.TOOLBOX),
+    FORMS("forms", WebServiceType.TOOLBOX),
+    IMAGE("image", WebServiceType.TOOLBOX),
+    MERGE("merge", WebServiceType.TOOLBOX),
+    OPTIONS("options", WebServiceType.TOOLBOX),
+    PASSWORD("password", WebServiceType.TOOLBOX),
+    PRINT("print", WebServiceType.TOOLBOX),
+    ROTATE("rotate", WebServiceType.TOOLBOX),
+    SECURITY("security", WebServiceType.TOOLBOX),
+    WATERMARK("watermark", WebServiceType.TOOLBOX),
+    XMP("xmp", WebServiceType.TOOLBOX),
+    SPLIT("split", WebServiceType.TOOLBOX);
+
+    private final String name;
+    private final WebServiceType type;
+
+    /**
+     * Instantiates a mapping of a xml tag name to a certain webPDF ws type.
+     *
+     * @param name The name, that shall be mapped.
+     * @param type The type the name shall be mapped to.
+     */
+    XMLNamedWSType(String name, WebServiceType type) {
+        this.name = name;
+        this.type = type;
+    }
+
+    /**
+     * Returns the xml tag name mapped by this type.
+     *
+     * @return The name of the xml tag, that is mapped by this type.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Returns the webPDF ws type the tag name is mapped to.
+     *
+     * @return The webPDF ws type the tag name is mapped to.
+     */
+    public WebServiceType getType() {
+        return type;
+    }
+
+    /**
+     * Attempts to find a webPDF ws type for a given xml tag name.
+     *
+     * @param name The name a webPDF ws type shall be found for.
+     * @return The type mapped to the given xml tag name or null, if such a type has not been mapped.
+     */
+    public static XMLNamedWSType find(String name) {
+        for (XMLNamedWSType webPDFWebservice : values()) {
+            if (webPDFWebservice.getName().equals(name)) {
+                return webPDFWebservice;
+            }
+        }
+
+        return null;
+    }
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="net.webpdf.ant.task.AntAccess" />
+      <item index="1" class="java.lang.String" itemvalue="net.webpdf.ant.task.xml.JaxBAccess" />
+    </list>
+  </component>
+  <component name="MavenCompilerTasksManager">
+    <option name="beforeCompileTasks">
+      <set>
+        <MavenCompilerTask>
+          <option name="goal" value="install" />
+          <option name="projectPath" value="$PROJECT_DIR$/pom.xml" />
+        </MavenCompilerTask>
+      </set>
+    </option>
+    <option name="beforeRebuildTask">
+      <set>
+        <MavenCompilerTask>
+          <option name="goal" value="install" />
+          <option name="projectPath" value="$PROJECT_DIR$/pom.xml" />
+        </MavenCompilerTask>
+      </set>
+    </option>
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" project-jdk-name="1.7 (x64)" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://scm/svn/webpdf-ant/branches" />
+                  <option value="http://scm/svn/webpdf-ant/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://scm/svn/webpdf-ant/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+</project>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="complexExample" default="test" basedir="."
+         xmlns:webpdf="http://schema.webpdf.de/1.0/operation"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://schema.webpdf.de/1.0/operation http://schema.webpdf.de/1.0/operation/operation.xsd">
+
+    <taskdef resource="antlib.xml"
+             classpath="../build/webpdf-ant-1.0.0-SNAPSHOT.jar"/>
+
+    <property name="webPDFUrl" value="http://localhost:8080/webPDF"/>
+    <property name="usr" value="admin"/>
+    <property name="pwd" value="admin"/>
+    <property name="tempDir" value="data/output/temp"/>
+    <property name="targetDir" value="data/output/out"/>
+    <property name="sourceDir" value="data/input"/>
+    <path id="basedir.path">
+        <pathelement path="${basedir}"/>
+    </path>
+    <pathconvert targetos="unix" property="basedir.unix" refid="basedir.path"/>
+    <property name="file" value="${basedir.unix}/data/input/bmw_435.jpg"/>
+    <property name="file2" value="${basedir.unix}/data/input/demo show.pdf"/>
+
+    <!-- task executing a complex sequence based on variables -->
+    <target name="test">
+        <!-- clean output folder -->
+        <delete dir="data/output/out"/>
+        <mkdir dir="data/output/out"/>
+
+        <echo message="${file}"/>
+        <webpdf serverurl="${webPDFUrl}" tempdir="${tempDir}" targetdir="${targetDir}" failonerror="true">
+            <ntcredentials username="${usr}" password="${pwd}"/>
+            <!-- for each jpg in directory sourceDir -->
+            <fileset dir="${sourceDir}">
+                <include name="**/*.jpg"/>
+            </fileset>
+
+            <!-- create a file in target dir, that ends with "pdf" -->
+            <globmapper from="*.jpg" to="*.pdf"/>
+
+            <!-- convert the file to pdf -->
+            <group>
+                <webpdf:operation>
+                    <webpdf:converter pages="1" compression="false" jpegQuality="50" reduceResolution="true"/>
+                </webpdf:operation>
+            </group>
+
+            <!-- annotate the current pdf document and store the result as out -->
+            <group>
+                <var name="out" role="OUTPUT"/>
+                <webpdf:operation>
+                    <webpdf:annotation>
+                        <webpdf:add>
+                            <webpdf:text name="${file}" creator="${usr}" zoomable="false" contents="OUT"/>
+                        </webpdf:add>
+                    </webpdf:annotation>
+                </webpdf:operation>
+                <webpdf:operation>
+                    <webpdf:rotate degrees="180"/>
+                </webpdf:operation>
+            </group>
+
+            <!-- annotate the pdf document and store the result as out2 -->
+            <group>
+                <var name="out2" role="OUTPUT"/>
+                <webpdf:operation>
+                    <webpdf:annotation>
+                        <webpdf:add>
+                            <webpdf:text name="${file}" creator="${usr}" zoomable="false" contents="OUT2"/>
+                        </webpdf:add>
+                    </webpdf:annotation>
+                </webpdf:operation>
+                <webpdf:operation>
+                    <webpdf:rotate degrees="270"/>
+                </webpdf:operation>
+            </group>
+            <!-- the current pdf document should still not contain annotations, as the previous 2 changes have been
+            stored in output variables, instead of replacing the current source document. -->
+
+            <!-- annotate the current pdf document now! -->
+            <group>
+                <webpdf:operation>
+                    <webpdf:annotation>
+                        <webpdf:add>
+                            <webpdf:text name="${file}" creator="${usr}" zoomable="false" contents="BASE"/>
+                        </webpdf:add>
+                    </webpdf:annotation>
+                </webpdf:operation>
+            </group>
+
+            <!-- merge all three created documents (base, out and out2) store the result into a variable-->
+            <group>
+                <var name="result" role="OUTPUT"/>
+                <webpdf:operation>
+                    <webpdf:merge>
+                        <webpdf:data source="uri" uri="file:///${out}"/>
+                    </webpdf:merge>
+                </webpdf:operation>
+                <webpdf:operation>
+                    <webpdf:merge>
+                        <webpdf:data source="uri" uri="file:///${out2}"/>
+                    </webpdf:merge>
+                </webpdf:operation>
+            </group>
+
+            <!-- use a fresh file as the source for the next operation (replacing the current pdf work progress). Merge
+            the previously created result to the end of the fresh file. -->
+            <group>
+                <var name="in" role="INPUT" value="${file2}"/>
+                <webpdf:operation>
+                    <webpdf:merge>
+                        <webpdf:data source="uri" uri="file:///${result}"/>
+                    </webpdf:merge>
+                </webpdf:operation>
+            </group>
+            <!-- After the execution of this target, you should find new results in "tests\data\output\out" -->
+        </webpdf>
+    </target>
+</project>
