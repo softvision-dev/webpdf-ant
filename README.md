@@ -1,7 +1,7 @@
 <h1>webPDF Ant task</h1>
 This repository defines an Ant task, which can be used to call the webPDF SOAP webservices directly from an Ant build file. 
 
-![webPDF Logo](images/logo.png)
+![webPDF Logo](./images/logo.png)
 
 [webPDF](https://www.webpdf.de/) is a commercial multi-platform server solution for creating and processing PDF documents. To use the webPDF Ant tasks, a running webPDF installation is required. A demo version as Windows installation, Linux package or as a virtual machine can be downloaded from the [product page](https://www.webpdf.de/en/download-web-pdf.html).
 
@@ -22,9 +22,9 @@ To use this library, import the produced JAR to a project of your choice and add
    ```
 <h2>Dependencies</h2>
 This library requires the inclusion of the following libraries:                        
-   * [__ant-1.9.5.jar__](https://mvnrepository.com/artifact/org.apache.ant/ant/1.9.5)
-   * [__ant-contrib-1.0b3.jar__](https://mvnrepository.com/artifact/ant-contrib/ant-contrib/1.0b3) 
-   * [__commons-io-2.5.jar__](https://mvnrepository.com/artifact/commons-io/commons-io/2.5)
+   * [ant-1.9.5.jar](https://mvnrepository.com/artifact/org.apache.ant/ant/1.9.5)
+   * [ant-contrib-1.0b3.jar](https://mvnrepository.com/artifact/ant-contrib/ant-contrib/1.0b3) 
+   * [commons-io-2.5.jar](https://mvnrepository.com/artifact/commons-io/commons-io/2.5)
 
 <h2>Tasks</h2>
 After including the library, the following tasks can be used from an Ant build file.
