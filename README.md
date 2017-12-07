@@ -16,10 +16,12 @@ This library is build with the IntelliJ IDEA IDE. You can directly open and run 
 
 <h2>Usage</h2>
 To use this library, import the produced JAR to a project of your choice and add it to your ant classpath.
+   
    ```xml
     <taskdef resource="net/webpdf/ant/antlib.xml"
              classpath="${basedir}/../webPDF-task-1.0.jar"/>
    ```
+   
 <h2>Dependencies</h2>
 This library requires the inclusion of the following libraries:                        
    - [ant-1.9.5.jar](https://mvnrepository.com/artifact/org.apache.ant/ant/1.9.5)
@@ -74,6 +76,7 @@ The webPDF task defines the initial source files, that shall be the base of all 
 When using multiple source files via resource collections, the webPDF task shall be called repeatedly for each individual source document.
 <h4>Input and output variables</h4>
 Using variables the default resource handling can be overridden. The input variable allows to manually set the source document of a webPDF task from a file path or a property containing a file path. The output variable allows to store the created target document as a referable variable, so that you may use it for later operations.
+   
    ```xml
    <webpdf serverurl="${webPDFUrl}" user="${usr}" password="${pwd}"
       serverprotected="true" useauthorization="true"
