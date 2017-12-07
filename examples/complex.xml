@@ -26,6 +26,8 @@
         <!-- clean output folder -->
         <delete dir="data/output/out"/>
         <mkdir dir="data/output/out"/>
+        <delete dir="data/output/temp"/>
+        <mkdir dir="data/output/temp"/>
 
         <echo message="${file}"/>
         <webpdf serverurl="${webPDFUrl}" tempdir="${tempDir}" targetdir="${targetDir}" failonerror="true">

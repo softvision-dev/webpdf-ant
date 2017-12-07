@@ -24,6 +24,8 @@
         <!-- clean output folder -->
         <delete dir="data/output/out"/>
         <mkdir dir="data/output/out"/>
+        <delete dir="data/output/temp"/>
+        <mkdir dir="data/output/temp"/>
 
         <!-- Locate and configure webPDF server and execution context. -->
         <webpdf serverurl="${webPDFUrl}" tempdir="${tempDir}" targetdir="${targetDir}" failonerror="true">

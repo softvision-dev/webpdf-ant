@@ -421,7 +421,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
+            <state relative-caret-position="1854">
               <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
               <folding />
             </state>
@@ -452,29 +452,69 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-2313">
-                <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+              <first_editor relative-caret-position="162">
+                <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
                 <folding>
-                  <marker date="1512652901509" expanded="true" signature="1375:1435" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="2534:2661" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="4361:4408" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="5361:5714" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="6955:7209" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="8238:8344" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="8356:8667" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="8411:8652" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="8679:8990" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="8734:8975" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="9002:9435" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="9016:9420" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="9447:9837" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="9516:9822" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="10440:10596" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="10459:10580" ph="..." />
-                  <marker date="1512652901509" expanded="true" signature="10474:10560" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="1430:1490" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="2589:2716" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="4416:4463" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="5416:5769" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="7010:7264" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="8293:8399" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="8411:8722" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="8466:8707" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="8734:9045" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="8789:9030" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="9057:9490" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="9071:9475" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="9502:9892" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="9571:9877" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="10495:10651" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="10514:10635" ph="..." />
+                  <marker date="1512653353964" expanded="true" signature="10529:10615" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attachFile.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/attachFile.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="complex.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/complex.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convertAndAnnotate.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/convertAndAnnotate.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variables.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/variables.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -574,12 +614,12 @@
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/GroupTaskIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/WebPDFTaskIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/net/webpdf/ant/OperationTaskIntegrationTest.java" />
-        <option value="$PROJECT_DIR$/examples/complex.xml" />
-        <option value="$PROJECT_DIR$/examples/attachFile.xml" />
-        <option value="$PROJECT_DIR$/examples/convertAndAnnotate.xml" />
-        <option value="$PROJECT_DIR$/examples/variables.xml" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/examples/attachFile.xml" />
+        <option value="$PROJECT_DIR$/examples/complex.xml" />
+        <option value="$PROJECT_DIR$/examples/convertAndAnnotate.xml" />
+        <option value="$PROJECT_DIR$/examples/variables.xml" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -656,6 +696,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webpdf-ant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webpdf-ant" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webpdf-ant" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webpdf-ant" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -672,18 +742,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="webPDF-Ant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webpdf-ant" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -720,7 +779,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -784,7 +842,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.complexExample">
+  <component name="RunManager" selected="Application.attachFileExample">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -1111,6 +1169,7 @@
       <workItem from="1512642412994" duration="885000" />
       <workItem from="1512648428700" duration="3302000" />
       <workItem from="1512652213634" duration="691000" />
+      <workItem from="1512653155128" duration="404000" />
     </task>
     <task id="WEBPDF-917" summary="Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache">
       <created>1501682533361</created>
@@ -1195,7 +1254,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406522000" />
+    <option name="totallyTimeSpent" value="406926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1215,15 +1274,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5195599" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.52689487" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16136919" sideWeight="0.66450214" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41834453" sideWeight="0.88202935" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41834453" sideWeight="0.87347186" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26286355" sideWeight="0.44376528" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.4804401" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.47310513" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13691932" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13875306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="YouTrack" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1340,34 +1399,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/data/input/bmw_435.jpg" />
     <entry file="file://$PROJECT_DIR$/examples/data/input/donald-duck.png" />
-    <entry file="file://$PROJECT_DIR$/examples/attachFile.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="43" column="60" lean-forward="false" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/complex.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/convertAndAnnotate.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31">
-          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/variables.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-571">
-          <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/net/webpdf/ant/antlib.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1555,14 +1586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/WebPDFTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/main/resources/net/webpdf/wsclient/webpdf-wsclient-1.0.0-20170928.121633-5.jar!/META-INF/maven/net.webpdf.wsclient/webpdf-wsclient/pom.xml" />
     <entry file="file://$PROJECT_DIR$/maven-repository/net/webPDF/wsclient/webpdf-wsclient/1.0.0/webpdf-wsclient-1.0.0.jar.lastUpdated" />
     <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/OperationTask.java">
@@ -1575,7 +1598,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
+        <state relative-caret-position="1854">
           <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
           <folding />
         </state>
@@ -1597,29 +1620,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/webpdf/ant/WebPDFTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/attachFile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/complex.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/convertAndAnnotate.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/variables.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-2313">
-            <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+          <first_editor relative-caret-position="162">
+            <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             <folding>
-              <marker date="1512652901509" expanded="true" signature="1375:1435" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="2534:2661" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="4361:4408" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="5361:5714" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="6955:7209" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="8238:8344" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="8356:8667" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="8411:8652" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="8679:8990" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="8734:8975" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="9002:9435" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="9016:9420" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="9447:9837" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="9516:9822" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="10440:10596" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="10459:10580" ph="..." />
-              <marker date="1512652901509" expanded="true" signature="10474:10560" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="1430:1490" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="2589:2716" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="4416:4463" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="5416:5769" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="7010:7264" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="8293:8399" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="8411:8722" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="8466:8707" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="8734:9045" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="8789:9030" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="9057:9490" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="9071:9475" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="9502:9892" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="9571:9877" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="10495:10651" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="10514:10635" ph="..." />
+              <marker date="1512653353964" expanded="true" signature="10529:10615" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
