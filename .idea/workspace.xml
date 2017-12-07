@@ -44,6 +44,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d996964b-8f35-4516-8397-4fde8280979e" name="WEBPDF-917 Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache" comment="WEBPDF-917 Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/B.pdf" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/SVD.png" />
       <change beforePath="" afterPath="$PROJECT_DIR$/examples/data/input/test.jpg" />
@@ -448,12 +449,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="144">
-                <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <first_editor relative-caret-position="162">
+                <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
                 <folding>
                   <marker date="1512657663456" expanded="true" signature="1360:1420" ph="..." />
                   <marker date="1512657663456" expanded="true" signature="2507:2634" ph="..." />
@@ -475,6 +476,16 @@
                 </folding>
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -560,8 +571,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/credentials/GSSUsage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/credentials/kerberos/KerberosCredentials.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/credentials/kerberos/KerberosName.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/credentials/kerberos/GSSName.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/webpdf/ant/task/credentials/GSS/GSSMechOID.java" />
@@ -611,6 +620,8 @@
         <option value="$PROJECT_DIR$/examples/convertAndAnnotate.xml" />
         <option value="$PROJECT_DIR$/examples/variables.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitattributes" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -781,6 +792,13 @@
       <recent name="net.webpdf.ant.task.ws" />
       <recent name="net.webpdf.ant.task.logging" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\development\webPDF-ant-DEV\maven-repository" />
+      <recent name="C:\development\webPDF-ant-DEV\maven-repository\repository" />
+      <recent name="C:\development\webPDF-ant-DEV\examples\data\input" />
+      <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant\task\files" />
+      <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="net.webpdf.ant" />
       <recent name="" />
@@ -788,23 +806,16 @@
       <recent name="net.webpdf.ant.task.configuration" />
       <recent name="main.ant" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\development\webPDF-ant-DEV\maven-repository\net\webPDF" />
-      <recent name="C:\development\webPDF-ant-DEV\src\main\resources\net\webpdf\wsclient" />
-      <recent name="C:\development\webPDF-ant-DEV\examples\data\input" />
-      <recent name="C:\development\webPDF-ant-DEV\src\test\java\net\webpdf\ant" />
-      <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\development\webPDF-ant-DEV\maven-repository" />
-      <recent name="C:\development\webPDF-ant-DEV\maven-repository\repository" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\development\webPDFAntGit\webpdf-ant" />
+      <recent name="C:\development\webPDFAntGit\webpdf-ant\images" />
+      <recent name="C:\development\webPDF-ant-DEV\maven-repository\net\webPDF" />
+      <recent name="C:\development\webPDF-ant-DEV\src\main\resources\net\webpdf\wsclient" />
       <recent name="C:\development\webPDF-ant-DEV\examples\data\input" />
-      <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant\task\files" />
-      <recent name="C:\development\webPDF-ant-DEV\src\test\resources\net\webpdf\ant" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1147,7 +1158,7 @@
       <workItem from="1512648428700" duration="3302000" />
       <workItem from="1512652213634" duration="691000" />
       <workItem from="1512653155128" duration="404000" />
-      <workItem from="1512653692883" duration="4025000" />
+      <workItem from="1512653692883" duration="4964000" />
     </task>
     <task id="WEBPDF-917" summary="Umstellung des webPDF AntTask auf neue XSD basierte WS Ansprache">
       <created>1501682533361</created>
@@ -1232,7 +1243,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410951000" />
+    <option name="totallyTimeSpent" value="411890000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1245,7 +1256,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1672" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1261,7 +1271,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.46821517" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1405868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1405868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="YouTrack" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1327,20 +1337,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/OperationTaskIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/TestArguments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/net/webpdf/ant/TestResources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -1640,11 +1636,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="144">
-            <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <first_editor relative-caret-position="162">
+            <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
             <folding>
               <marker date="1512657663456" expanded="true" signature="1360:1420" ph="..." />
               <marker date="1512657663456" expanded="true" signature="2507:2634" ph="..." />
@@ -1666,6 +1670,14 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
