@@ -1,7 +1,7 @@
 <h1>webPDF Ant task</h1>
 This repository defines an Ant task, which can be used to call the webPDF SOAP webservices directly from an Ant build file. 
 
-![webPDF Logo](https://github.com/softvision-dev/webpdf-ant/blob/master/images/logo.png)
+![webPDF Logo](/images/logo.png "webPDF")
 
 [webPDF](https://www.webpdf.de/) is a commercial multi-platform server solution for creating and processing PDF documents. To use the webPDF Ant tasks, a running webPDF installation is required. A demo version as Windows installation, Linux package or as a virtual machine can be downloaded from the [product page](https://www.webpdf.de/en/download-web-pdf.html).
 
@@ -168,10 +168,10 @@ The used input files, generated output files and the build scripts themselves, c
 To run the examples, you should use the provided run configurations and you will have to adapt the connection information to your webPDF server's settings.
 
 <h2>Contributing</h2>
-Contributions are welcome. We are always looking for improvements or further programs for other programming languages or environments. We accept contributions via 'Pull Requests' on [GitHub](__TODO: add reference to pull requests__).
+Contributions are welcome. We are always looking for improvements or further programs for other programming languages or environments. We accept contributions via 'Pull Requests' on [GitHub](https://github.com/softvision-dev/webpdf-ant/pulls).
 
 <h2>License</h2>
-Please, see the [license](LICENSE) file for more information.
+Please, see the [LICENSE](../LICENSE) file for more information.
 
 <h2>More help</h2>
 [webPDF Documentation](https://www.webpdf.de/en/documentation)
