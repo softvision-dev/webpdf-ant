@@ -10,7 +10,7 @@ This repository defines an Ant task, which can be used to call the webPDF SOAP w
 ## Installation
 You can clone this repository with 'Git' to your local system. Another way to use these Ant tasks without using 'Git' is to download the zip file containing the current version (using the following link or by clicking the "Download ZIP" button on the repo page).
 
-[Download the samples as ZIP](https://github.com/softvision-dev/webpdf-ant/archive/master.zip)
+[Download the library as ZIP](https://github.com/softvision-dev/webpdf-ant/archive/master.zip)
 
 This library is build with the IntelliJ IDEA IDE. You can directly open and run the project from inside the IDE. For other IDEs you have to adapt the project accordingly.
 
