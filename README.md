@@ -23,7 +23,8 @@ To use this library, import the produced JAR to a project of your choice and add
    ```
    
 <h2>Dependencies</h2>
-This library requires the inclusion of the following libraries:                        
+This library requires the inclusion of the following libraries:
+                        
    - [ant-1.9.5.jar](https://mvnrepository.com/artifact/org.apache.ant/ant/1.9.5)
    - [ant-contrib-1.0b3.jar](https://mvnrepository.com/artifact/ant-contrib/ant-contrib/1.0b3) 
    - [commons-io-2.5.jar](https://mvnrepository.com/artifact/commons-io/commons-io/2.5)
