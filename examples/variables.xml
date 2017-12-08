@@ -6,7 +6,7 @@
          xsi:schemaLocation="http://schema.webpdf.de/1.0/operation http://schema.webpdf.de/1.0/operation/operation.xsd">
 
     <taskdef resource="antlib.xml"
-             classpath="../build/webpdf-ant-1.0.0-SNAPSHOT.jar"/>
+             classpath="../build/webpdf-ant-0.9.0.jar"/>
 
     <property name="webPDFUrl" value="http://localhost:8080/webPDF"/>
     <property name="usr" value="admin"/>
