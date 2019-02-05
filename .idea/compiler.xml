@@ -6,11 +6,12 @@
         <sourceOutputDir name="build/generated-sources/annotations" />
         <sourceTestOutputDir name="build/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="webpdf-ant" />
         <module name="webPDF-task" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mixin" target="1.5" />
+      <module name="webpdf-ant" target="1.7" />
       <module name="webPDF-ant-DEV" target="1.7" />
       <module name="webPDF-task" target="1.7" />
     </bytecodeTargetLevel>

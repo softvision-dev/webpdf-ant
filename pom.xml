@@ -3,19 +3,50 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.webpdf.ant</groupId>
+    <groupId>net.webpdf</groupId>
     <artifactId>webpdf-ant</artifactId>
-    <version>0.9.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>webPDF ant-task</name>
-    <description>Library defining an Ant task, which can be used to call the webPDF SOAP webservices directly from an
-        Ant build file.
-    </description>
-    <url>https://www.softvision.de/</url>
+    <description>webPDF client library for using SOAP web services via an Ant task.</description>
+    <url>https://www.webpdf.de</url>
+    <inceptionYear>2017</inceptionYear>
     <organization>
         <name>SoftVision Development GmbH, Fulda, Germany</name>
         <url>https://www.softvision.de/</url>
     </organization>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>be</id>
+            <name>Bernd Engelhardt</name>
+            <email>bernd.engelhardt@softvision.de</email>
+            <organization>SoftVision Development</organization>
+            <organizationUrl>https://www.softvision.de/</organizationUrl>
+            <roles>
+                <role>Lead Developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+        <developer>
+            <id>cap</id>
+            <name>Christian Appl</name>
+            <email>christian.appl@softvision.de</email>
+            <organization>SoftVision Development</organization>
+            <organizationUrl>https://www.softvision.de/</organizationUrl>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>Europe/Berlin</timezone>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>1.7</java.version>
@@ -26,13 +57,19 @@
     <profiles>
         <profile>
             <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.20</version>
+                        <version>2.22.1</version>
                         <configuration>
+                            <additionalClasspathElements>
+                                <additionalClasspathElement>${basedir}/src/main/resources</additionalClasspathElement>
+                            </additionalClasspathElements>
                             <excludes>
                                 <exclude>**/*IntegrationTest.java</exclude>
                             </excludes>
@@ -41,6 +78,7 @@
                 </plugins>
             </build>
         </profile>
+
         <profile>
             <id>integration</id>
             <build>
@@ -48,9 +86,12 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.20</version>
+                        <version>2.22.1</version>
                         <configuration>
-                            <systemProperties>
+                            <additionalClasspathElements>
+                                <additionalClasspathElement>${basedir}/src/main/resources</additionalClasspathElement>
+                            </additionalClasspathElements>
+                            <systemPropertyVariables>
                                 <protocol>http</protocol>
                                 <username>admin</username>
                                 <password>admin</password>
@@ -58,7 +99,46 @@
                                 <port>8080</port>
                                 <sslport>8443</sslport>
                                 <path>webPDF/</path>
-                            </systemProperties>
+                            </systemPropertyVariables>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>sonatype-oss-release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.8</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>oss-sonatype-repo</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -68,20 +148,70 @@
 
     <scm>
         <url>https://github.com/softvision-dev/webpdf-ant</url>
-        <connection>scm:git:git://github.com/softvision-dev/webpdf-ant.git</connection>
+        <connection>scm:git:https://github.com/softvision-dev/webpdf-ant.git</connection>
         <developerConnection>scm:git:git@github.com:softvision-dev/webpdf-ant.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
-    <repositories>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/softvision-dev/webpdf-wsclient/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>project.local</id>
-            <name>project</name>
-            <url>file:///${project.basedir}/maven-repository</url>
+            <id>sonatype-nexus-staging</id>
+            <name>Sonatype Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.pragmatists</groupId>
+            <artifactId>JUnitParams</artifactId>
+            <version>1.1.1</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.sun.xml.security</groupId>
             <artifactId>xml-security-impl</artifactId>
@@ -98,95 +228,55 @@
             <version>1.0b3</version>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>net.webpdf.wsclient</groupId>
+            <groupId>net.webpdf</groupId>
             <artifactId>webpdf-wsclient</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>pl.pragmatists</groupId>
-            <artifactId>JUnitParams</artifactId>
-            <version>1.0.6</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpmime</artifactId>
-            <version>4.5.3</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.6</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.1</version>
-            <scope>compile</scope>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
     <build>
-        <defaultGoal>clean compile</defaultGoal>
+        <defaultGoal>package</defaultGoal>
         <directory>build</directory>
 
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.0.1</version>
                 <executions>
                     <execution>
-                        <phase>verify</phase>
+                        <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
-                        <phase>verify</phase>
+                        <id>attach-java-docs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <failOnError>true</failOnError>
+                </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>buildnumber-maven-plugin</artifactId>
@@ -206,32 +296,27 @@
                     <shortRevisionLength>7</shortRevisionLength>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>3.1.1</version>
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Implementation-Build>${project.version} (${maven.build.timestamp}, r${buildNumber})
-                            </Implementation-Build>
+                            <Implementation-Build>${project.version} (${maven.build.timestamp}, r${buildNumber})</Implementation-Build>
                         </manifestEntries>
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                             <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <useUniqueVersions>false</useUniqueVersions>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.8</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -240,12 +325,11 @@
                         </goals>
                         <configuration>
                             <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>

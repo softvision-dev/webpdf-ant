@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="ant-task:jar">
-    <output-path>$PROJECT_DIR$/build/artifacts/ant_task_jar</output-path>
-    <root id="archive" name="webPDF-task-1.0.jar">
-      <element id="module-output" name="webPDF-task" />
-    </root>
-  </artifact>
-</component>

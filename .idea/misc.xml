@@ -6,6 +6,9 @@
       <item index="1" class="java.lang.String" itemvalue="net.webpdf.ant.task.xml.JaxBAccess" />
     </list>
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="MavenCompilerTasksManager">
     <option name="beforeCompileTasks">
       <set>
