@@ -19,7 +19,7 @@
     <pathconvert targetos="unix" property="basedir.unix" refid="basedir.path"/>
     <property name="testFile" value="${basedir.unix}/data/input/B.pdf"/>
 
-    <!-- selecting, converting and attaching single files -->
+    <!-- Moving pages of a document to another target position. -->
     <target name="test">
         <!-- clean output folder -->
         <delete dir="data/output/out"/>

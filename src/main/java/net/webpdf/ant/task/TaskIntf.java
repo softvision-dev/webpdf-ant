@@ -4,6 +4,8 @@ import net.webpdf.ant.task.files.IterativeTaskFile;
 import net.webpdf.ant.task.logging.AntLogger;
 import net.webpdf.ant.task.variable.VariableMap;
 import org.apache.tools.ant.BuildException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An implementing class shall provide all mechanisms for a containing parent task to initialize and execute it's children.
@@ -27,13 +29,14 @@ public interface TaskIntf {
      *
      * @param files The file container this task shall be using.
      */
-    void setFiles(IterativeTaskFile files);
+    void setFiles(@Nullable IterativeTaskFile files);
 
     /**
      * Returns the container managing the iterative file progression of this task.
      *
      * @return The file container this task is currently using.
      */
+    @Nullable
     IterativeTaskFile getFiles();
 
     /**
@@ -41,13 +44,14 @@ public interface TaskIntf {
      *
      * @param taskConfiguration The task configuration of the top level webPDF task.
      */
-    void setTaskConfiguration(TaskConfiguration taskConfiguration);
+    void setTaskConfiguration(@Nullable TaskConfiguration taskConfiguration);
 
     /**
      * Returns the top level task configuration of this sub task.
      *
      * @return The task configuration of the containing top level webPDF task.
      */
+    @Nullable
     TaskConfiguration getTaskConfiguration();
 
     /**
@@ -55,6 +59,7 @@ public interface TaskIntf {
      *
      * @return The variables used by this task.
      */
+    @NotNull
     VariableMap getVariables();
 
     /**
@@ -62,5 +67,7 @@ public interface TaskIntf {
      *
      * @return The logger used by this task.
      */
+    @NotNull
     AntLogger getLogger();
+
 }

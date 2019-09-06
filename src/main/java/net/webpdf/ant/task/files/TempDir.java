@@ -1,6 +1,8 @@
 package net.webpdf.ant.task.files;
 
 import org.apache.commons.io.FileUtils;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +17,9 @@ public class TempDir {
     private static final String NEUTRAL_SUFFIX = ".temp";
     private static final String WEBPDF_ANT_PREFIX = "webPDF-ant_";
 
+    @NotNull
     private final List<File> createdTempFiles = new ArrayList<>();
+    @Nullable
     private File tempDir;
 
     /**
@@ -23,7 +27,7 @@ public class TempDir {
      *
      * @param tempDir The directory serving as the temporary directory of the webPDF task.
      */
-    TempDir(File tempDir) {
+    TempDir(@Nullable File tempDir) {
         this.tempDir = tempDir;
     }
 
@@ -41,6 +45,7 @@ public class TempDir {
      * @return The temporary file, that has been created.
      * @throws IOException Shall be thrown, if the temporary file could not be created.
      */
+    @NotNull
     File tryCreateTempFile() throws IOException {
         File tempFile;
         if (tempDir != null && tempDir.exists() && tempDir.isDirectory() && tempDir.canWrite()) {
@@ -66,10 +71,12 @@ public class TempDir {
      *
      * @return The actural temp directory.
      */
+    @NotNull
     public File getTempDir() {
         if (tempDir == null) {
             return new File(System.getProperty("java.io.tmpdir"));
         }
         return tempDir;
     }
+
 }

@@ -21,7 +21,7 @@
     <property name="firstEntry" value="${basedir.unix}/data/input/test.jpg"/>
     <property name="secondEntry" value="${basedir.unix}/data/input/test2.jpg"/>
 
-    <!-- selecting, converting and attaching single files -->
+    <!-- attaching files to a PDF portfolio base document -->
     <target name="test">
         <!-- clean output folder -->
         <delete dir="data/output/out"/>

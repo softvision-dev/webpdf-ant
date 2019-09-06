@@ -9,6 +9,7 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.RuntimeConfigurable;
 import org.apache.tools.ant.UnknownElement;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,15 +26,10 @@ public class OperationTaskIntegrationTest {
     @Rule
     public TemporaryFolder temporaryFolder = new TemporaryFolder();
 
-    private Project project;
-    private TaskConfiguration taskConfiguration;
-    private XMLElement xmlElement;
     private OperationTask operationTask;
 
-    private void setup(String serverURL, XMLElement xmlElement, Project project) throws Exception {
-        this.project = project;
-        this.xmlElement = xmlElement;
-        taskConfiguration = new TaskConfiguration();
+    private void setup(String serverURL, XMLElement xmlElement, Project project) {
+        TaskConfiguration taskConfiguration = new TaskConfiguration();
         operationTask = new OperationTask(xmlElement, project);
         operationTask.setTaskConfiguration(taskConfiguration);
         operationTask.getTaskConfiguration().setServerUrl(serverURL);
@@ -59,6 +55,7 @@ public class OperationTaskIntegrationTest {
         operationTask.setFiles(iterativeTaskFile);
         operationTask.execute();
 
+        assertNotNull(operationTask.getFiles());
         Assert.assertTrue("Output file should have been created.", operationTask.getFiles().getCurrentTarget().exists());
     }
 
@@ -91,6 +88,8 @@ public class OperationTaskIntegrationTest {
         userCredentials.setPassword("admin");
         operationTask.getTaskConfiguration().setCredentialsTask(userCredentials);
         operationTask.execute();
+
+        assertNotNull(operationTask.getFiles());
         Assert.assertTrue("Output file should have been created.", operationTask.getFiles().getCurrentTarget().exists());
     }
 
@@ -145,7 +144,6 @@ public class OperationTaskIntegrationTest {
 
     @Test(expected = BuildException.class)
     public void testNullFile() throws Exception {
-        File testFile = null;
         UnknownElement operation = new UnknownElement("operation");
         UnknownElement converter = new UnknownElement("converter");
         operation.addChild(converter);
@@ -159,7 +157,7 @@ public class OperationTaskIntegrationTest {
         XMLElement xmlElement = XMLElement.parseUnknownElement(operation);
 
         setup(testResources.getArguments().buildServerUrl().toString(), xmlElement, new Project());
-        IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(testFile, "targetFileName", new TempDir());
+        IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(null, "targetFileName", new TempDir());
         operationTask.setFiles(iterativeTaskFile);
         operationTask.execute();
     }
@@ -191,8 +189,9 @@ public class OperationTaskIntegrationTest {
         operationTask.execute();
     }
 
-    private class TestInvalidXMLElement extends XMLElement {
+    private static class TestInvalidXMLElement extends XMLElement {
         @Override
+        @NotNull
         public String prepareConfiguration(Project project) throws JAXBException {
             throw new JAXBException("For testing reasons.");
         }

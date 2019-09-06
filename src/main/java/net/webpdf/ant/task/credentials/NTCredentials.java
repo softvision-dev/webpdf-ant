@@ -2,6 +2,7 @@ package net.webpdf.ant.task.credentials;
 
 import net.webpdf.ant.task.AntAccess;
 import org.apache.tools.ant.Task;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This task provides credentials for windows platforms, containing username and password and optionally the name of the user's
@@ -9,9 +10,13 @@ import org.apache.tools.ant.Task;
  */
 public class NTCredentials extends Task {
 
+    @Nullable
     private String username = "";
+    @Nullable
     private String password = "";
+    @Nullable
     private String workstation = "";
+    @Nullable
     private String domain = "";
 
     /**
@@ -22,7 +27,7 @@ public class NTCredentials extends Task {
      * @param username The name of the user that shall be authenticated.
      */
     @AntAccess
-    public void setUsername(String username) {
+    public void setUsername(@Nullable String username) {
         this.username = username;
     }
 
@@ -31,6 +36,7 @@ public class NTCredentials extends Task {
      *
      * @return The name of the user, that shall be authenticated.
      */
+    @Nullable
     String getUsername() {
         return username;
     }
@@ -41,7 +47,7 @@ public class NTCredentials extends Task {
      * @param password The password of the user, that shall be authenticated.
      */
     @AntAccess
-    public void setPassword(String password) {
+    public void setPassword(@Nullable String password) {
         this.password = password;
     }
 
@@ -50,6 +56,7 @@ public class NTCredentials extends Task {
      *
      * @return The password of the user, that shall be authenticated.
      */
+    @Nullable
     String getPassword() {
         return password;
     }
@@ -60,7 +67,7 @@ public class NTCredentials extends Task {
      * @param workstation The name of the workstation of the user, that shall be authenticated.
      */
     @AntAccess
-    public void setWorkstation(String workstation) {
+    public void setWorkstation(@Nullable String workstation) {
         this.workstation = workstation;
     }
 
@@ -69,6 +76,7 @@ public class NTCredentials extends Task {
      *
      * @return The name of the workstation of the user, that shall be authenticated
      */
+    @Nullable
     String getWorkstation() {
         return workstation;
     }
@@ -79,14 +87,16 @@ public class NTCredentials extends Task {
      * @param domain The name of the domain of the user, that shall be authenticated.
      */
     @AntAccess
-    public void setDomain(String domain) {
+    public void setDomain(@Nullable String domain) {
         this.domain = domain;
     }
 
     /**
      * Returns the name of the domain of the user, that shall be authenticated.
      */
+    @Nullable
     String getDomain() {
         return domain;
     }
+
 }

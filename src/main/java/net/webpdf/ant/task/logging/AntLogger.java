@@ -1,5 +1,8 @@
 package net.webpdf.ant.task.logging;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -8,6 +11,8 @@ import java.io.StringWriter;
  * This class will format messages in a useful way, that can be logged by a tasks logging methods.
  */
 public class AntLogger {
+
+    @NotNull
     private final org.apache.tools.ant.Task task;
 
     /**
@@ -15,7 +20,7 @@ public class AntLogger {
      *
      * @param task The owning task that shall be managed.
      */
-    public AntLogger(org.apache.tools.ant.Task task) {
+    public AntLogger(@NotNull org.apache.tools.ant.Task task) {
         this.task = task;
     }
 
@@ -26,7 +31,7 @@ public class AntLogger {
      * @param logLevel The level and therefore context of this logged event.
      * @param logTag   The tag, that has caused the logging of this event.
      */
-    private void log(String message, LogLevel logLevel, LogTag logTag) {
+    private void log(@NotNull String message, @NotNull LogLevel logLevel, @NotNull LogTag logTag) {
         task.log(prependLevel(prependLogTag(appendLocation(message), logTag), logLevel), logLevel.getLevel());
     }
 
@@ -38,7 +43,7 @@ public class AntLogger {
      * @param logLevel The level and therefore context of this logged event.
      * @param logTag   The tag, that has caused the logging of this event.
      */
-    private void log(String message, Throwable ex, LogLevel logLevel, LogTag logTag) {
+    private void log(@Nullable String message, @Nullable Throwable ex, @NotNull LogLevel logLevel, @NotNull LogTag logTag) {
         StringBuilder messageBuilder = new StringBuilder();
         String msg = message;
         if (msg == null || msg.isEmpty()) {
@@ -66,7 +71,7 @@ public class AntLogger {
      * @param logLevel The level and therefore context of this logged event.
      * @param logTag   The tag, that has caused the logging of this event.
      */
-    private void log(Throwable ex, LogLevel logLevel, LogTag logTag) {
+    private void log(@Nullable Throwable ex, @NotNull LogLevel logLevel, @NotNull LogTag logTag) {
         log(getExMessage(ex), ex, logLevel, logTag);
     }
 
@@ -76,7 +81,8 @@ public class AntLogger {
      * @param ex The exception a message shall be extracted from.
      * @return The most likely exception message.
      */
-    private String getExMessage(Throwable ex) {
+    @NotNull
+    private String getExMessage(@Nullable Throwable ex) {
         if (ex == null) {
             return "";
         }
@@ -94,7 +100,8 @@ public class AntLogger {
      * @param message The message that shall be modified.
      * @return A message ending with the location of the currently logged event.
      */
-    private String appendLocation(String message) {
+    @NotNull
+    private String appendLocation(@NotNull String message) {
         return message + "\n    " + LogTag.LOCATION.getTag() + " " + task.getLocation();
     }
 
@@ -105,7 +112,8 @@ public class AntLogger {
      * @param logLevel The level and therefore context of the logged event.
      * @return A message beginning with the currently active log level.
      */
-    private String prependLevel(String message, LogLevel logLevel) {
+    @NotNull
+    private String prependLevel(@NotNull String message, @NotNull LogLevel logLevel) {
         if (logLevel == LogLevel.INFO) {
             return message;
         }
@@ -119,7 +127,7 @@ public class AntLogger {
      * @param logTag  The tag that contains the currently logged event.
      * @return A message beginning with currently active tag.
      */
-    private String prependLogTag(String message, LogTag logTag) {
+    private String prependLogTag(@NotNull String message, @NotNull LogTag logTag) {
         return logTag.getTag() + " " + message;
     }
 
@@ -129,7 +137,7 @@ public class AntLogger {
      * @param message The message that shall be logged.
      * @param logTag  The tag that caused the logged event.
      */
-    public void info(String message, LogTag logTag) {
+    public void info(@NotNull String message, @NotNull LogTag logTag) {
         log(message, LogLevel.INFO, logTag);
     }
 
@@ -138,7 +146,7 @@ public class AntLogger {
      *
      * @param logTag The tag that caused the logged event.
      */
-    public void info(LogTag logTag) {
+    public void info(@NotNull LogTag logTag) {
         log("", LogLevel.INFO, logTag);
     }
 
@@ -148,7 +156,7 @@ public class AntLogger {
      * @param message The message that shall be logged.
      * @param logTag  The tag that caused the logged event.
      */
-    public void error(String message, LogTag logTag) {
+    public void error(@NotNull String message, @NotNull LogTag logTag) {
         log(message, LogLevel.ERROR, logTag);
     }
 
@@ -159,7 +167,7 @@ public class AntLogger {
      * @param ex      The Exception, that has occurred and shall be logged.
      * @param logTag  The tag that caused the logged event.
      */
-    public void error(String message, Throwable ex, LogTag logTag) {
+    public void error(@NotNull String message, @Nullable Throwable ex, @NotNull LogTag logTag) {
         log(message, ex, LogLevel.ERROR, logTag);
     }
 
@@ -169,7 +177,7 @@ public class AntLogger {
      * @param ex     The Exception, that has occurred and shall be logged.
      * @param logTag The tag that caused the logged event.
      */
-    public void error(Throwable ex, LogTag logTag) {
+    public void error(@Nullable Throwable ex, @NotNull LogTag logTag) {
         log(ex, LogLevel.ERROR, logTag);
     }
 
@@ -179,7 +187,7 @@ public class AntLogger {
      * @param message The message that shall be logged.
      * @param logTag  The tag that caused the logged event.
      */
-    public void warn(String message, LogTag logTag) {
+    public void warn(@NotNull String message, @NotNull LogTag logTag) {
         log(message, LogLevel.WARN, logTag);
     }
 
@@ -190,7 +198,7 @@ public class AntLogger {
      * @param ex      The Exception, that has occurred and shall be logged.
      * @param logTag  The tag that caused the logged event.
      */
-    public void warn(String message, Throwable ex, LogTag logTag) {
+    public void warn(@NotNull String message, @Nullable Throwable ex, @NotNull LogTag logTag) {
         log(message, ex, LogLevel.WARN, logTag);
     }
 
@@ -200,7 +208,8 @@ public class AntLogger {
      * @param ex     The Exception, that has occurred and shall be logged.
      * @param logTag The tag that caused the logged event.
      */
-    public void warn(Throwable ex, LogTag logTag) {
+    public void warn(@Nullable Throwable ex, @NotNull LogTag logTag) {
         log(ex, LogLevel.WARN, logTag);
     }
+
 }

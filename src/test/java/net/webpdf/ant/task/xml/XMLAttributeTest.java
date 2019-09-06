@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class XMLAttributeTest {
 
     @Test
-    public void attributeTest() throws Exception {
+    public void attributeTest() {
         XMLAttribute attribute = new XMLAttribute("key", "originalValue");
         assertEquals(String.format("Unexpected key: %s", attribute.getKey()),
             "key", attribute.getKey());
@@ -21,7 +21,7 @@ public class XMLAttributeTest {
     }
 
     @Test
-    public void attributeNullTest() throws Exception {
+    public void attributeNullTest() {
         XMLAttribute attribute = new XMLAttribute(null, null);
         assertEquals(String.format("Unexpected key: %s", attribute.getKey()),
             "", attribute.getKey());

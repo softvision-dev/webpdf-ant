@@ -3,6 +3,8 @@ package net.webpdf.ant.task.xml;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.UnknownElement;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.*;
@@ -17,10 +19,14 @@ import static net.webpdf.ant.task.xml.XMLElement.OPERATION_NAMESPACE;
  */
 @XmlRootElement(namespace = OPERATION_NAMESPACE)
 public class XMLElement {
+
     static final String OPERATION_NAMESPACE = "http://schema.webpdf.de/1.0/operation";
 
-    private String xmlTag;
+    @NotNull
+    private String xmlTag = "";
+    @NotNull
     private final List<XMLElement> children = new ArrayList<>();
+    @NotNull
     private final List<XMLAttribute> attributes = new ArrayList<>();
 
     /**
@@ -34,11 +40,11 @@ public class XMLElement {
      *
      * @param unknownElement The element this node shall be initialized with.
      */
-    private void initElement(UnknownElement unknownElement) {
+    private void initElement(@Nullable UnknownElement unknownElement) {
         if (unknownElement == null) {
             return;
         }
-        this.xmlTag = unknownElement.getTag();
+        this.xmlTag = unknownElement.getTag() == null ? "" : unknownElement.getTag();
 
         //GET CHILDREN
         if (unknownElement.getChildren() != null) {
@@ -66,6 +72,7 @@ public class XMLElement {
      */
     @XmlAnyAttribute
     @JaxBAccess
+    @NotNull
     public Map<QName, String> getAttributes() {
         Map<QName, String> elements = new HashMap<>();
         for (XMLAttribute attribute : attributes) {
@@ -82,6 +89,7 @@ public class XMLElement {
      */
     @XmlAnyElement
     @JaxBAccess
+    @NotNull
     public List<JAXBElement<XMLElement>> getChildren() {
         List<JAXBElement<XMLElement>> childNodes = new ArrayList<>();
         for (XMLElement element : children) {
@@ -95,12 +103,14 @@ public class XMLElement {
      *
      * @throws BuildException shall be thrown if the projects properties could not be read.
      */
-    private void initializeAttributes(Project project) throws BuildException {
-        for (XMLAttribute attribute : attributes) {
-            attribute.setValue(project.replaceProperties(attribute.getOriginalValue()));
-        }
-        for (XMLElement element : children) {
-            element.initializeAttributes(project);
+    private void initializeAttributes(@Nullable Project project) throws BuildException {
+        if (project != null) {
+            for (XMLAttribute attribute : attributes) {
+                attribute.setValue(project.replaceProperties(attribute.getOriginalValue()));
+            }
+            for (XMLElement element : children) {
+                element.initializeAttributes(project);
+            }
         }
     }
 
@@ -110,7 +120,8 @@ public class XMLElement {
      * @return A container collecting the operation and options defined by this node.
      * @throws JAXBException Shall be thrown if an error occurred during JAXB marshalling/unmarshalling.
      */
-    public String prepareConfiguration(Project project) throws JAXBException {
+    @NotNull
+    public String prepareConfiguration(@Nullable Project project) throws JAXBException {
         initializeAttributes(project);
         StringWriter writer = new StringWriter();
 
@@ -131,9 +142,11 @@ public class XMLElement {
      * @param unknownElement The element that shall be parsed.
      * @return A XMLElement containing structured generic xml content.
      */
-    public static XMLElement parseUnknownElement(UnknownElement unknownElement) {
+    @NotNull
+    public static XMLElement parseUnknownElement(@Nullable UnknownElement unknownElement) {
         XMLElement element = new XMLElement();
         element.initElement(unknownElement);
         return element;
     }
+
 }

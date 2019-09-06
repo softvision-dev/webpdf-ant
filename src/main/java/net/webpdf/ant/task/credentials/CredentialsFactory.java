@@ -3,11 +3,13 @@ package net.webpdf.ant.task.credentials;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class creates usable Credentials, that authenticate a user during a webPDF webservice call.
  */
 public class CredentialsFactory {
+
     /**
      * Empty private default constructor. Instantiation of this factory is never required. Call it's method from a
      * static context instead.
@@ -24,11 +26,16 @@ public class CredentialsFactory {
      * @throws BuildException Shall be thrown if the task is an instance of a valid credentials task type, but did contain
      *                        invalid information.
      */
-    public static org.apache.http.auth.Credentials produceCredentials(Task credentialTask) throws BuildException {
+    @Nullable
+    public static org.apache.http.auth.Credentials produceCredentials(@Nullable Task credentialTask) throws BuildException {
         if (credentialTask instanceof NTCredentials) {
             NTCredentials credentials = (NTCredentials) credentialTask;
+            if (credentials.getUsername() == null) {
+                return null;
+            }
             try {
-                return new org.apache.http.auth.NTCredentials(credentials.getUsername(), credentials.getPassword(), credentials.getWorkstation(), credentials.getDomain());
+                return new org.apache.http.auth.NTCredentials(credentials.getUsername(), credentials.getPassword(),
+                    credentials.getWorkstation(), credentials.getDomain());
             } catch (IllegalArgumentException ex) {
                 throw new BuildException(ex);
             }
@@ -36,8 +43,10 @@ public class CredentialsFactory {
         if (credentialTask instanceof UserCredentials) {
             UserCredentials credentials = (UserCredentials) credentialTask;
             try {
-                return new UsernamePasswordCredentials(
-                                                          credentials.getUsername(), credentials.getPassword()
+                if (credentials.getUsername() == null) {
+                    return null;
+                }
+                return new UsernamePasswordCredentials(credentials.getUsername(), credentials.getPassword()
                 );
             } catch (IllegalArgumentException ex) {
                 throw new BuildException(ex);
@@ -46,4 +55,5 @@ public class CredentialsFactory {
 
         return null;
     }
+
 }

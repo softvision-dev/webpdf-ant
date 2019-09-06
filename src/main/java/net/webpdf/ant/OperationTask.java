@@ -15,6 +15,7 @@ import org.apache.http.auth.Credentials;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.filters.StringInputStream;
+import org.jetbrains.annotations.Nullable;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.stream.StreamSource;
@@ -26,6 +27,7 @@ import java.io.InputStream;
  */
 public class OperationTask extends Task {
 
+    @Nullable
     private final XMLElement xmlElement;
 
     /**
@@ -33,7 +35,7 @@ public class OperationTask extends Task {
      * options in a XML substructure, that is conforming to the XSD schema defined by the webPDF server.
      * Unknown sub elements of this task shall be treated as pure XML content and shall not be wrapped in Task instances.
      */
-    OperationTask(XMLElement xmlElement, Project project) {
+    OperationTask(@Nullable XMLElement xmlElement, @Nullable Project project) {
         super(TaskName.OPERATION);
         this.xmlElement = xmlElement;
         setProject(project);
@@ -47,13 +49,13 @@ public class OperationTask extends Task {
     @Override
     public void execute() throws BuildException {
         try {
-            if (xmlElement == null || getFiles() == null || getTaskConfiguration() == null || getProject() == null) {
+            if (xmlElement == null || getFiles() == null || getProject() == null) {
                 throw new BuildException("The operation tasks definition is incomplete");
             }
             try (
-                    Session session = SessionFactory.createInstance(WebServiceProtocol.SOAP, getTaskConfiguration().getServerURL());
-                    InputStream xmlInputStream = new StringInputStream(xmlElement.prepareConfiguration(getProject()));
-                    SoapDocument soapDocument = new SoapDocument(getFiles().getCurrentSource().toURI(), getFiles().getCurrentTarget())
+                Session session = SessionFactory.createInstance(WebServiceProtocol.SOAP, getTaskConfiguration().getServerURL());
+                InputStream xmlInputStream = new StringInputStream(xmlElement.prepareConfiguration(getProject()));
+                SoapDocument soapDocument = new SoapDocument(getFiles().getCurrentSource().toURI(), getFiles().getCurrentTarget())
             ) {
                 Credentials credentials = getTaskConfiguration().getCredentials();
                 if (credentials != null) {
@@ -72,4 +74,5 @@ public class OperationTask extends Task {
             throw new BuildException(ex.getMessage(), ex);
         }
     }
+
 }

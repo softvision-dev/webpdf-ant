@@ -32,7 +32,6 @@ public class WebPDFTaskIntegrationTest {
     private WebPDFTask webPDFTask;
     private GroupTask groupTask;
     private TaskConfiguration taskConfiguration;
-    private Variable outputVariable;
     private File targetFile;
 
     private void setup(String serverUrl, File targetFile) throws Exception {
@@ -52,7 +51,7 @@ public class WebPDFTaskIntegrationTest {
         webPDFTask.setTempDir(temporaryFolder.newFolder());
         webPDFTask.setTargetFile(targetFile);
         webPDFTask.add(new TestFileNameMapper());
-        outputVariable = new Variable();
+        Variable outputVariable = new Variable();
         outputVariable.setRole(VariableRole.OUTPUT);
         outputVariable.setName("output");
         outputVariable.setOwningTask(webPDFTask);
@@ -76,7 +75,12 @@ public class WebPDFTaskIntegrationTest {
 
         webPDFTask.addTask(new Echo());
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test
@@ -104,7 +108,11 @@ public class WebPDFTaskIntegrationTest {
         webPDFTask.add(groupTask);
         webPDFTask.execute();
 
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test
@@ -127,7 +135,12 @@ public class WebPDFTaskIntegrationTest {
         webPDFTask.addTask(new Echo());
         webPDFTask.add(groupTask);
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test
@@ -155,9 +168,13 @@ public class WebPDFTaskIntegrationTest {
         RuntimeConfigurable runtimeConfigurable = new RuntimeConfigurable(converter, "converter");
         converter.setRuntimeConfigurableWrapper(runtimeConfigurable);
         groupTask.add(operation);
-
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test
@@ -185,9 +202,13 @@ public class WebPDFTaskIntegrationTest {
         RuntimeConfigurable runtimeConfigurable = new RuntimeConfigurable(converter, "converter");
         converter.setRuntimeConfigurableWrapper(runtimeConfigurable);
         groupTask.add(operation);
-
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test
@@ -213,9 +234,13 @@ public class WebPDFTaskIntegrationTest {
 
         groupTask.add(operation);
         groupTask.add(operation2);
-
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test(expected = BuildException.class)
@@ -265,7 +290,12 @@ public class WebPDFTaskIntegrationTest {
 
         webPDFTask.add(groupTask2);
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test(expected = BuildException.class)
@@ -308,9 +338,13 @@ public class WebPDFTaskIntegrationTest {
         RuntimeConfigurable runtimeConfigurable = new RuntimeConfigurable(converter, "converter");
         converter.setRuntimeConfigurableWrapper(runtimeConfigurable);
         groupTask.add(operation);
-
         webPDFTask.execute();
-        Assert.assertTrue("Output file should have been created.", new File(webPDFTask.getVariables().getVar(VariableRole.OUTPUT).getValue()).exists());
+
+        Variable output = webPDFTask.getVariables().getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        String outputValue = output.getValue();
+        assertNotNull(outputValue);
+        Assert.assertTrue("Output file should have been created.", new File(outputValue).exists());
     }
 
     @Test
@@ -330,7 +364,7 @@ public class WebPDFTaskIntegrationTest {
         Assert.assertFalse("Output file should not have been created.", targetFile.exists());
     }
 
-    private class TestFileNameMapper implements FileNameMapper {
+    private static class TestFileNameMapper implements FileNameMapper {
         private String fromName = "";
 
         @Override

@@ -24,14 +24,12 @@ public class GroupTaskIntegrationTest {
     @Rule
     public TemporaryFolder temporaryFolder = new TemporaryFolder();
 
-    private Project project;
     private GroupTask groupTask;
-    private TaskConfiguration taskConfiguration;
     private Variable outputVariable;
 
-    private void setup(String serverUrl, String outputValue) throws Exception {
-        project = new Project();
-        taskConfiguration = new TaskConfiguration();
+    private void setup(String serverUrl, String outputValue) {
+        Project project = new Project();
+        TaskConfiguration taskConfiguration = new TaskConfiguration();
         groupTask = new GroupTask();
         groupTask.setProject(project);
         groupTask.setTaskConfiguration(taskConfiguration);
@@ -64,6 +62,7 @@ public class GroupTaskIntegrationTest {
             groupTask.getVariables().getVar(VariableRole.OUTPUT));
 
         groupTask.execute();
+        assertNotNull(groupTask.getFiles());
         Assert.assertTrue("Output file should have been created.", groupTask.getFiles().getCurrentTarget().exists());
     }
 
@@ -94,6 +93,7 @@ public class GroupTaskIntegrationTest {
         assertEquals("Set variable should be identical to mapped variable", outputVariable, setVariable);
 
         groupTask.execute();
+        assertNotNull(groupTask.getFiles());
         Assert.assertTrue("Output file should have been created.", groupTask.getFiles().getCurrentTarget().exists());
     }
 
@@ -148,6 +148,7 @@ public class GroupTaskIntegrationTest {
         assertEquals("Set variable should be identical to mapped variable", outputVariable, setVariable);
 
         groupTask.execute();
+        assertNotNull(groupTask.getFiles());
         Assert.assertTrue("Output file should have been created.", groupTask.getFiles().getCurrentTarget().exists());
     }
 
@@ -237,9 +238,7 @@ public class GroupTaskIntegrationTest {
     public void testNullFile() throws Exception {
         setup(testResources.getArguments().buildServerUrl().toString(),
             new File(temporaryFolder.getRoot(), "value.txt").getAbsolutePath());
-        File testFile = null;
-
-        IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(testFile, "targetFileName", new TempDir());
+        IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(null, "targetFileName", new TempDir());
         groupTask.setFiles(iterativeTaskFile);
         groupTask.execute();
     }

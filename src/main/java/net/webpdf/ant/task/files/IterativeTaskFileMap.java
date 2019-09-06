@@ -13,6 +13,8 @@ import org.apache.tools.ant.types.resources.FileResource;
 import org.apache.tools.ant.util.FileNameMapper;
 import org.apache.tools.ant.util.IdentityMapper;
 import org.apache.tools.ant.util.ResourceUtils;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,12 +29,18 @@ import java.util.List;
  */
 public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
 
+    @NotNull
     private final List<ResourceCollection> resourceCollections = new ArrayList<>();
 
+    @NotNull
     private List<IterativeTaskFile> taskFileList = new ArrayList<>();
+    @Nullable
     private FileNameMapper fileNameMapper = null;
+    @Nullable
     private TempDir tempDir;
+    @Nullable
     private File targetDirectory;
+    @Nullable
     private File targetFile;
 
     private boolean resourceInitialized = false;
@@ -49,13 +57,14 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @param tempDir The directory temporary files shall be created in.
      * @throws BuildException Shall be thrown if the given directory is invalid or inaccessible.
      */
-    public void setTempDir(File tempDir) throws BuildException {
+    public void setTempDir(@Nullable File tempDir) throws BuildException {
         if (tempDir == null || !tempDir.exists() || !tempDir.canWrite() || !tempDir.isDirectory()) {
             throw new BuildException("The given temporary directory is inaccessible.");
         }
         this.tempDir = new TempDir(tempDir);
     }
 
+    @NotNull
     public TempDir getTempDir() {
         if (this.tempDir == null) {
             this.tempDir = new TempDir();
@@ -69,8 +78,9 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @param targetDirectory The directory the final result shall be placed in.
      * @throws BuildException Shall be thrown if the given directory is invalid or inaccessible.
      */
-    public void setTargetDirectory(File targetDirectory) throws BuildException {
-        if (targetDirectory == null || (!targetDirectory.exists() && !targetDirectory.mkdirs()) || !targetDirectory.isDirectory() || !targetDirectory.canWrite()) {
+    public void setTargetDirectory(@Nullable File targetDirectory) throws BuildException {
+        if (targetDirectory == null || (!targetDirectory.exists() && !targetDirectory.mkdirs()) ||
+                !targetDirectory.isDirectory() || !targetDirectory.canWrite()) {
             throw new BuildException("The given target directory is inaccessible.");
         }
 
@@ -82,6 +92,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      *
      * @return The directory the final result shall be placed in.
      */
+    @Nullable
     public File getTargetDirectory() {
         return targetDirectory;
     }
@@ -91,7 +102,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      *
      * @param targetFile The file the final result shall be copied to.
      */
-    public void setTargetFile(File targetFile) {
+    public void setTargetFile(@Nullable File targetFile) {
         this.targetFile = targetFile;
     }
 
@@ -100,6 +111,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      *
      * @return The file the final result shall be copied to.
      */
+    @Nullable
     public File getTargetFile() {
         return targetFile;
     }
@@ -109,6 +121,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      *
      * @return The mapper used to deduce the target file name from the source file name.
      */
+    @NotNull
     private FileNameMapper getMapper() {
         if (fileNameMapper == null) {
             fileNameMapper = new IdentityMapper();
@@ -158,7 +171,8 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @param resource The resource, that shall be checked.
      * @return True, if a matching file could be found, that is defined by the given resource.
      */
-    private boolean checkResourceExists(Resource resource) {
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
+    private boolean checkResourceExists(@NotNull Resource resource) {
         return resource.isFilesystemOnly() && resource.isExists();
     }
 
@@ -167,7 +181,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      *
      * @param file The file, that shall serve as a source of the current webPDF task.
      */
-    private void mapFile(File file) {
+    private void mapFile(@NotNull File file) {
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             if (files != null) {
@@ -186,7 +200,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @param file           The source file, that shall be mapped.
      * @param mappedFileName The name that shall be mapped.
      */
-    private void mapFile(File file, String mappedFileName) {
+    private void mapFile(@Nullable File file, @Nullable String mappedFileName) {
         String[] filenames = getMapper().mapFileName(mappedFileName);
         if (filenames != null && filenames.length >= 1) {
             taskFileList.add(new IterativeTaskFile(file, filenames[0], getTempDir()));
@@ -198,7 +212,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      *
      * @param resourceCollection The collection, that shall be appended to this task file collection.
      */
-    public void add(ResourceCollection resourceCollection) {
+    public void add(@NotNull ResourceCollection resourceCollection) {
         resourceCollections.add(resourceCollection);
     }
 
@@ -208,7 +222,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @param fileNameMapper The mapper, that will be used to deduce target file names for source files.
      * @throws BuildException Shall be thrown if the mapper is not valid, or if a valid mapper has already been set.
      */
-    public void setMapper(FileNameMapper fileNameMapper) throws BuildException {
+    public void setMapper(@Nullable FileNameMapper fileNameMapper) throws BuildException {
         if (this.fileNameMapper != null && !(this.fileNameMapper instanceof IdentityMapper)) {
             throw new BuildException("Only one mapper may be set per task.");
         }
@@ -221,9 +235,10 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @param input The input variable, that shall replace the currently set resources.
      * @throws IOException Shall be thrown, if the given file can not be accessed.
      */
-    public void replaceWithInputVar(Variable input) throws IOException {
+    public void replaceWithInputVar(@Nullable Variable input) throws IOException {
         File file;
-        if (input != null && input.getValue() != null && VariableRole.INPUT.equals(input.getRole()) && (file = new File(input.getValue())).exists() && file.isFile() && file.canRead()) {
+        if (input != null && input.getValue() != null && VariableRole.INPUT.equals(input.getRole()) &&
+                (file = new File(input.getValue())).exists() && file.isFile() && file.canRead()) {
             File tempFile = getTempDir().tryCreateTempFile();
             FileUtils.copyFile(file, tempFile);
             taskFileList.clear();
@@ -238,6 +253,7 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
      * @return An iterator for this collection.
      */
     @Override
+    @NotNull
     public Iterator<IterativeTaskFile> iterator() {
         if (!resourceInitialized) {
             parseResources();
@@ -245,4 +261,5 @@ public class IterativeTaskFileMap implements Iterable<IterativeTaskFile> {
         }
         return taskFileList.iterator();
     }
+
 }

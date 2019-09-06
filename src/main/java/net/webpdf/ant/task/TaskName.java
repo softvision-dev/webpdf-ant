@@ -1,15 +1,20 @@
 package net.webpdf.ant.task;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Stores names and types for the different defined task classes.
  */
 public enum TaskName {
+
     WEBPDF("webPDF", "webPDF"),
     GROUP("group", "group"),
     OPERATION("operation", "operation"),
     VARIABLE("variable", "variable");
 
+    @NotNull
     private final String name;
+    @NotNull
     private final String type;
 
     /**
@@ -18,7 +23,7 @@ public enum TaskName {
      * @param name The name of the task.
      * @param type The type of the task.
      */
-    TaskName(String name, String type) {
+    TaskName(@NotNull String name, @NotNull String type) {
         this.name = name;
         this.type = type;
     }
@@ -28,6 +33,7 @@ public enum TaskName {
      *
      * @return The name of the defined task.
      */
+    @NotNull
     public String getName() {
         return name;
     }
@@ -37,7 +43,9 @@ public enum TaskName {
      *
      * @return The type of the defined task.
      */
+    @NotNull
     public String getType() {
         return type;
     }
+
 }

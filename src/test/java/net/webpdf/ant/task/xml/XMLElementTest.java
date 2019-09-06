@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 public class XMLElementTest {
 
     @Test
-    public void testParseUnknownElement() throws Exception {
+    public void testParseUnknownElement() {
         UnknownElement unknownElement = new UnknownElement("element");
         RuntimeConfigurable rt = new RuntimeConfigurable(unknownElement, "someTask");
         rt.setAttribute("attr1", "1");
@@ -48,14 +48,12 @@ public class XMLElementTest {
         assertEquals(String.format("Unexpected attribute attrInt : %s", child.getAttributes().get(new QName("attr4"))),
             "4", child.getAttributes().get(new QName("attr4")));
         //ignore all attributes of other type than String:
-        assertEquals(String.format("Unexpected attribute attrInt : %s", xmlElement.getAttributes().get(new QName("attrInt"))),
-            null, xmlElement.getAttributes().get(new QName("attrInt")));
-        assertEquals(String.format("Unexpected attribute attrInt : %s", child.getAttributes().get(new QName("attrInt"))),
-            null, xmlElement.getAttributes().get(new QName("attrInt")));
+        assertNull(String.format("Unexpected attribute attrInt : %s", xmlElement.getAttributes().get(new QName("attrInt"))), xmlElement.getAttributes().get(new QName("attrInt")));
+        assertNull(String.format("Unexpected attribute attrInt : %s", child.getAttributes().get(new QName("attrInt"))), xmlElement.getAttributes().get(new QName("attrInt")));
     }
 
     @Test
-    public void testParseNull() throws Exception {
+    public void testParseNull() {
         assertNotNull("Null should at least result in an empty element!", XMLElement.parseUnknownElement(null));
     }
 

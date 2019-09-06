@@ -4,6 +4,7 @@ import net.webpdf.ant.task.AntAccess;
 import net.webpdf.ant.task.Task;
 import net.webpdf.ant.task.TaskName;
 import org.apache.tools.ant.BuildException;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Manages a task storing a variable property. This solution is entirely base on Ant-contrib Variable and an instance
@@ -11,9 +12,13 @@ import org.apache.tools.ant.BuildException;
  */
 public class Variable extends Task {
 
+    @Nullable
     private String name;
+    @Nullable
     private String value;
+    @Nullable
     private VariableRole role;
+    @Nullable
     private Task owningTask;
 
     /**
@@ -28,7 +33,7 @@ public class Variable extends Task {
      *
      * @param owningTask The task that shall be owning the variable.
      */
-    public void setOwningTask(Task owningTask) {
+    public void setOwningTask(@Nullable Task owningTask) {
         this.owningTask = owningTask;
     }
 
@@ -39,12 +44,14 @@ public class Variable extends Task {
      */
     public void execute() throws BuildException {
         net.sf.antcontrib.property.Variable var = new net.sf.antcontrib.property.Variable();
-        var.setProject(owningTask.getProject());
-        var.setOwningTarget(owningTask.getOwningTarget());
-        var.setLocation(owningTask.getLocation());
-        var.setName(name);
-        var.setValue(value);
-        var.execute();
+        if (owningTask != null) {
+            var.setProject(owningTask.getProject());
+            var.setOwningTarget(owningTask.getOwningTarget());
+            var.setLocation(owningTask.getLocation());
+            var.setName(name);
+            var.setValue(value);
+            var.execute();
+        }
     }
 
     /**
@@ -53,7 +60,7 @@ public class Variable extends Task {
      * @param name The referable name of the variable.
      */
     @AntAccess
-    public void setName(String name) {
+    public void setName(@Nullable String name) {
         this.name = name;
     }
 
@@ -63,6 +70,7 @@ public class Variable extends Task {
      * @return The referable name of the variable.
      */
     @AntAccess
+    @Nullable
     public String getName() {
         return name;
     }
@@ -73,7 +81,7 @@ public class Variable extends Task {
      * @param value The value of the variable.
      */
     @AntAccess
-    public void setValue(String value) {
+    public void setValue(@Nullable String value) {
         this.value = value;
     }
 
@@ -83,6 +91,7 @@ public class Variable extends Task {
      * @return The value of the variable.
      */
     @AntAccess
+    @Nullable
     public String getValue() {
         return value;
     }
@@ -93,7 +102,7 @@ public class Variable extends Task {
      * @param role The role of this variable in it's context.
      */
     @AntAccess
-    public void setRole(VariableRole role) {
+    public void setRole(@Nullable VariableRole role) {
         this.role = role;
     }
 
@@ -103,7 +112,9 @@ public class Variable extends Task {
      * @return The role of this variable in it's context.
      */
     @AntAccess
+    @Nullable
     public VariableRole getRole() {
         return role;
     }
+
 }

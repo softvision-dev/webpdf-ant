@@ -1,6 +1,8 @@
 package net.webpdf.ant.task.variable;
 
 import net.webpdf.ant.task.Task;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,8 +13,12 @@ import java.util.Map;
  * Stores variables for a task and allows to retrieve said variables using their role.
  */
 public class VariableMap {
+
+    @Nullable
     private final Task task;
+    @NotNull
     private final Map<VariableRole, Variable> variables = new HashMap<>();
+    @NotNull
     private final List<Variable> unprocessedVariables = new ArrayList<>();
 
     /**
@@ -20,7 +26,7 @@ public class VariableMap {
      *
      * @param task The task a variable container shall be created for.
      */
-    public VariableMap(Task task) {
+    public VariableMap(@Nullable Task task) {
         this.task = task;
     }
 
@@ -30,7 +36,8 @@ public class VariableMap {
      * @param role The role the searched variable shall have.
      * @return The variable, that serves the given purpose, or null, if such a variable can not be found.
      */
-    public Variable getVar(VariableRole role) {
+    @Nullable
+    public Variable getVar(@Nullable VariableRole role) {
         if (role == null) {
             return null;
         }
@@ -43,7 +50,7 @@ public class VariableMap {
      *
      * @param variable The variable, that shall be added to the task container.
      */
-    public void add(Variable variable) {
+    public void add(@NotNull Variable variable) {
         unprocessedVariables.add(variable);
     }
 
@@ -70,8 +77,9 @@ public class VariableMap {
      * @param role The role, that shall be checked.
      * @return Returns true if a variable has been assigned to the given role.
      */
-    public boolean isRoleTaken(VariableRole role) {
+    public boolean isRoleTaken(@Nullable VariableRole role) {
         processVariables();
         return variables.containsKey(role);
     }
+
 }

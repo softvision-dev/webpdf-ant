@@ -10,6 +10,8 @@ import net.webpdf.ant.task.xml.XMLElement;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.TaskContainer;
 import org.apache.tools.ant.UnknownElement;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import java.util.List;
  */
 public class GroupTask extends Task implements TaskContainer {
 
+    @NotNull
     private List<OperationTask> operations = new ArrayList<>();
 
     /**
@@ -40,7 +43,7 @@ public class GroupTask extends Task implements TaskContainer {
     public void execute() {
         getLogger().info(LogTag.GROUP);
 
-        if (getFiles() == null || getTaskConfiguration() == null || getProject() == null) {
+        if (getFiles() == null || getProject() == null) {
             throw new BuildException("The operation tasks definition is incomplete");
         }
 
@@ -62,16 +65,20 @@ public class GroupTask extends Task implements TaskContainer {
         //Init file iteration and source
         if (getVariables().isRoleTaken(VariableRole.INPUT)) {
             Variable input = getVariables().getVar(VariableRole.INPUT);
-            input.execute();
-            File srcFile = new File(getProject().replaceProperties(getProject().getProperty(input.getName())));
-            if (!srcFile.exists() || !srcFile.isFile() || !srcFile.canRead()) {
-                if (getTaskConfiguration().isFailOnError()) {
-                    throw new BuildException("The set source file can not be read: " + input);
+            if (input != null) {
+                input.execute();
+                File srcFile = new File(getProject().replaceProperties(getProject().getProperty(input.getName())));
+                if (!srcFile.exists() || !srcFile.isFile() || !srcFile.canRead()) {
+                    if (getTaskConfiguration().isFailOnError()) {
+                        throw new BuildException("The set source file can not be read: " + input);
+                    }
+                    getLogger().warn("The group is skipped, as the set source file can not be read: " + input, LogTag.GROUP);
+                    return;
                 }
-                getLogger().warn("The group is skipped, as the set source file can not be read: " + input, LogTag.GROUP);
-                return;
+                if (getFiles() != null) {
+                    getFiles().setCurrentSource(srcFile, true);
+                }
             }
-            getFiles().setCurrentSource(srcFile, true);
         }
     }
 
@@ -86,7 +93,7 @@ public class GroupTask extends Task implements TaskContainer {
                 operation.setFiles(getFiles());
                 operation.setTaskConfiguration(getTaskConfiguration());
                 operation.execute();
-                if (!getVariables().isRoleTaken(VariableRole.OUTPUT) || iter.hasNext()) {
+                if (getFiles() != null && (!getVariables().isRoleTaken(VariableRole.OUTPUT) || iter.hasNext())) {
                     getFiles().prepareNextOperation();
                 }
             } catch (BuildException ex) {
@@ -104,8 +111,8 @@ public class GroupTask extends Task implements TaskContainer {
      *
      * @param storedSource A source file, that shall be restored, after the execution of the current group.
      */
-    private void publishResult(File storedSource) {
-        if (getVariables().isRoleTaken(VariableRole.OUTPUT) && storedSource != null) {
+    private void publishResult(@Nullable File storedSource) {
+        if (getFiles() != null && getVariables().isRoleTaken(VariableRole.OUTPUT) && storedSource != null) {
             getFiles().tryPublish(getVariables().getVar(VariableRole.OUTPUT));
             getFiles().setCurrentSource(storedSource, false);
         }
@@ -119,7 +126,7 @@ public class GroupTask extends Task implements TaskContainer {
      */
     @Override
     @AntAccess
-    public void addTask(org.apache.tools.ant.Task task) {
+    public void addTask(@Nullable org.apache.tools.ant.Task task) {
         if (task instanceof UnknownElement) {
             add((UnknownElement) task);
         }
@@ -133,10 +140,12 @@ public class GroupTask extends Task implements TaskContainer {
      * It is not expected to use this method actively, as it is specifically defined for the access by ANT.
      */
     @AntAccess
-    public final void add(UnknownElement task) {
-        OperationTask operationTask = new OperationTask(XMLElement.parseUnknownElement(task), getProject());
-        operationTask.setLocation(task.getLocation());
-        operations.add(operationTask);
+    public final void add(@Nullable UnknownElement task) {
+        if (task != null) {
+            OperationTask operationTask = new OperationTask(XMLElement.parseUnknownElement(task), getProject());
+            operationTask.setLocation(task.getLocation());
+            operations.add(operationTask);
+        }
     }
 
     /**
@@ -146,7 +155,10 @@ public class GroupTask extends Task implements TaskContainer {
      * @param variable The variable, that shall be added.
      */
     @AntAccess
-    public final void add(Variable variable) {
-        getVariables().add(variable);
+    public final void add(@Nullable Variable variable) {
+        if (variable != null) {
+            getVariables().add(variable);
+        }
     }
+
 }

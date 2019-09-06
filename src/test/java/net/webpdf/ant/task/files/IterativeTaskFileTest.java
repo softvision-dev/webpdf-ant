@@ -22,27 +22,27 @@ public class IterativeTaskFileTest {
     private TempDir tempDir;
 
     @Before
-    public void prepare() throws Exception {
+    public void prepare() {
         tempDir = new TempDir();
     }
 
     @After
-    public void cleanup() throws Exception {
+    public void cleanup() {
         tempDir.cleanTemp();
     }
 
     @Test(expected = BuildException.class)
-    public void invalidNullSource() throws Exception {
+    public void invalidNullSource() {
         new IterativeTaskFile(null, "donald-duck.pdf", tempDir);
     }
 
     @Test(expected = BuildException.class)
-    public void invalidNullTarget() throws Exception {
+    public void invalidNullTarget() {
         new IterativeTaskFile(testResources.getResource("donald-duck.jpg"), null, tempDir);
     }
 
     @Test(expected = BuildException.class)
-    public void invalidNullTempDir() throws Exception {
+    public void invalidNullTempDir() {
         new IterativeTaskFile(testResources.getResource("donald-duck.jpg"), "donald-duck.pdf", null);
     }
 
@@ -52,7 +52,7 @@ public class IterativeTaskFileTest {
         IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(source, "donald-duck.pdf", tempDir);
         File target = iterativeTaskFile.getCurrentTarget();
         assertTrue("The current target is not valid.",
-            target != null && target.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
+            target.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
                 target.exists() && target.isFile() && target.canRead() && target.canWrite() && !target.equals(source));
     }
 
@@ -61,23 +61,23 @@ public class IterativeTaskFileTest {
         File source = testResources.getResource("donald-duck.jpg");
         IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(source, "donald-duck.pdf", tempDir);
         iterativeTaskFile.prepareNextOperation();
-        assertTrue("Iteration before first call to target should do nothing.", iterativeTaskFile.getCurrentSource().equals(source));
+        assertEquals("Iteration before first call to target should do nothing.", iterativeTaskFile.getCurrentSource(), source);
         File target = iterativeTaskFile.getCurrentTarget();
         assertTrue("The current target is not valid.",
-            target != null && target.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
+            target.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
                 target.exists() && target.isFile() && target.canRead() && target.canWrite() && !target.equals(source));
         iterativeTaskFile.prepareNextOperation();
 
         File target2 = iterativeTaskFile.getCurrentTarget();
         assertTrue("The current target is not valid.",
-            target2 != null && target2.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
+            target2.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
                 target2.exists() && target2.isFile() && target2.canRead() && target2.canWrite() && !target2.equals(source)
                 && !target.equals(target2));
         iterativeTaskFile.prepareNextOperation();
         assertFalse("First target should have been deleted now.", target.exists());
-        assertTrue("Targets shall be used as sources of following steps.", target2.equals(iterativeTaskFile.getCurrentSource()));
+        assertEquals("Targets shall be used as sources of following steps.", target2, iterativeTaskFile.getCurrentSource());
         iterativeTaskFile.reset();
-        assertTrue("OriginalSource should be regeneratable.", source.equals(iterativeTaskFile.getCurrentSource()));
+        assertEquals("OriginalSource should be regeneratable.", source, iterativeTaskFile.getCurrentSource());
     }
 
     @Test
@@ -86,7 +86,7 @@ public class IterativeTaskFileTest {
         IterativeTaskFile iterativeTaskFile = new IterativeTaskFile(source, "donald-duck.pdf", tempDir);
         File target = iterativeTaskFile.getCurrentTarget();
         assertTrue("The current target is not valid.",
-            target != null && target.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
+            target.getAbsolutePath().startsWith(tempDir.getTempDir().getAbsolutePath()) &&
                 target.exists() && target.isFile() && target.canRead() && target.canWrite() && !target.equals(source));
         iterativeTaskFile.dropCurrentTarget();
         assertTrue("Target should have been dropped and deleted.",
@@ -102,7 +102,7 @@ public class IterativeTaskFileTest {
         File previousTarget = iterativeTaskFile.getCurrentTarget();
         File resultFile = iterativeTaskFile.finalizeAndReset(targetFile, null);
         assertTrue("Result should have been created in place of given file.",
-            targetFile != null && targetFile.exists() && targetFile.isFile() && targetFile.canRead() &&
+            targetFile.exists() && targetFile.isFile() && targetFile.canRead() &&
                 targetFile.canWrite() && resultFile.equals(targetFile));
         assertTrue("Source and target should have been reset.",
             iterativeTaskFile.getCurrentSource().equals(source) && !iterativeTaskFile.getCurrentTarget().equals(previousTarget) &&
@@ -113,7 +113,7 @@ public class IterativeTaskFileTest {
         previousTarget = iterativeTaskFile.getCurrentTarget();
         resultFile = iterativeTaskFile.finalizeAndReset(null, tempDir.getTempDir());
         assertTrue("Result should have been created in place of given file.",
-            targetFile != null && targetFile.exists() && targetFile.isFile() && targetFile.canRead() &&
+            targetFile.exists() && targetFile.isFile() && targetFile.canRead() &&
                 targetFile.canWrite() && resultFile.equals(targetFile));
         assertTrue("Source and target should have been reset.",
             iterativeTaskFile.getCurrentSource().equals(source) && !iterativeTaskFile.getCurrentTarget().equals(previousTarget) &&
@@ -145,7 +145,7 @@ public class IterativeTaskFileTest {
         assertTrue("Source should have been preserved.", copiedSource.exists());
         iterativeTaskFile.reset();
         assertEquals("Original source should have been restored.", source, iterativeTaskFile.getCurrentSource());
-        copiedSource.delete();
+        assertTrue(copiedSource.delete());
     }
 
     @Test

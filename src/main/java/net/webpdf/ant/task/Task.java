@@ -2,23 +2,30 @@ package net.webpdf.ant.task;
 
 import net.webpdf.ant.task.files.IterativeTaskFile;
 import net.webpdf.ant.task.logging.AntLogger;
+import net.webpdf.ant.task.logging.LogTag;
 import net.webpdf.ant.task.variable.VariableMap;
 import org.apache.tools.ant.BuildException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class shall provide all mechanisms for a containing parent task to initialize and execute it's children.
  */
 public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf {
 
+    @NotNull
     private final AntLogger logger;
-    private TaskConfiguration taskConfiguration;
-    private IterativeTaskFile files;
+    @NotNull
     private final VariableMap variables;
+    @Nullable
+    private TaskConfiguration taskConfiguration;
+    @Nullable
+    private IterativeTaskFile files;
 
     /**
      * An extending class shall provide a set of basic mechanisms to initialize and execute it's children.
      */
-    public Task(TaskName taskName) {
+    public Task(@NotNull TaskName taskName) {
         this.variables = new VariableMap(this);
         this.logger = new AntLogger(this);
         setTaskName(taskName.getName());
@@ -42,7 +49,7 @@ public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf
      * @param files The file container this task shall be using.
      */
     @Override
-    public void setFiles(IterativeTaskFile files) {
+    public void setFiles(@Nullable IterativeTaskFile files) {
         this.files = files;
     }
 
@@ -52,6 +59,7 @@ public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf
      * @return The file container this task is currently using.
      */
     @Override
+    @Nullable
     public IterativeTaskFile getFiles() {
         return files;
     }
@@ -62,7 +70,7 @@ public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf
      * @param taskConfiguration The task configuration of the top level webPDF task.
      */
     @Override
-    public void setTaskConfiguration(TaskConfiguration taskConfiguration) {
+    public void setTaskConfiguration(@Nullable TaskConfiguration taskConfiguration) {
         this.taskConfiguration = taskConfiguration;
     }
 
@@ -72,7 +80,13 @@ public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf
      * @return The task configuration of the containing top level webPDF task.
      */
     @Override
+    @NotNull
     public TaskConfiguration getTaskConfiguration() {
+        if (taskConfiguration == null) {
+            String message = "Task configuration is missing.";
+            getLogger().error(message, LogTag.WEBPDF_TASK);
+            throw new BuildException(message, getLocation());
+        }
         return taskConfiguration;
     }
 
@@ -82,6 +96,7 @@ public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf
      * @return The variables used by this task.
      */
     @Override
+    @NotNull
     public VariableMap getVariables() {
         return variables;
     }
@@ -92,7 +107,9 @@ public abstract class Task extends org.apache.tools.ant.Task implements TaskIntf
      * @return The logger used by this task.
      */
     @Override
+    @NotNull
     public AntLogger getLogger() {
         return logger;
     }
+
 }

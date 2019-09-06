@@ -10,14 +10,14 @@ import static org.junit.Assert.*;
 
 public class VariableTest {
     private Variable variable;
-    private Task owningTask;
     private Project owningProject;
 
     @Before
     public void prepare() {
         variable = new Variable();
         owningProject = new Project();
-        owningTask = new Task(TaskName.OPERATION) {
+        //DO NOTHING
+        Task owningTask = new Task(TaskName.OPERATION) {
             @Override
             public void execute() throws BuildException {
                 //DO NOTHING

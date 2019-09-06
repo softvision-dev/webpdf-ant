@@ -3,6 +3,8 @@ package net.webpdf.ant.task.files;
 import net.webpdf.ant.task.variable.Variable;
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,13 +19,19 @@ import java.io.IOException;
  */
 public class IterativeTaskFile {
 
+    @NotNull
     private final TempDir tempDir;
+    @NotNull
     private final File originalSourceFile;
+    @NotNull
     private final String targetFileName;
 
-    private boolean preserveCurrentSource = true;
+    @NotNull
     private File currentSource;
+    @Nullable
     private File currentTarget;
+
+    private boolean preserveCurrentSource = true;
 
     /**
      * An instance of this class manages files for encapsulated tasks - passing results of a previous task, as the source
@@ -36,7 +44,7 @@ public class IterativeTaskFile {
      * @param tempDir            The directory temporary files shall be placed in.
      * @throws BuildException Shall be thrown if any of the parameters is invalid (null).
      */
-    public IterativeTaskFile(File originalSourceFile, String targetFileName, TempDir tempDir) throws BuildException {
+    public IterativeTaskFile(@Nullable File originalSourceFile, @Nullable String targetFileName, @Nullable TempDir tempDir) throws BuildException {
         if (originalSourceFile == null) {
             throw new BuildException("Incomplete source definition: source File has not been set.");
         }
@@ -58,7 +66,7 @@ public class IterativeTaskFile {
      * @param currentSource  The file, that shall be used as the source  of the currently prepared step.
      * @param preserveSource When set to true the prepared source file shall not be deleted after the execution.
      */
-    public void setCurrentSource(File currentSource, boolean preserveSource) {
+    public void setCurrentSource(@NotNull File currentSource, boolean preserveSource) {
         this.currentSource = currentSource;
         this.preserveCurrentSource = preserveSource;
     }
@@ -68,6 +76,7 @@ public class IterativeTaskFile {
      *
      * @return The current source file.
      */
+    @NotNull
     public File getCurrentSource() {
         return currentSource;
     }
@@ -87,6 +96,7 @@ public class IterativeTaskFile {
      * @return The current temporary target file (the source file of the next step).
      * @throws IOException Shall be thrown if a temporary target file could not be created for some reason.
      */
+    @NotNull
     public File getCurrentTarget() throws IOException {
         if (currentTarget == null) {
             currentTarget = tempDir.tryCreateTempFile();
@@ -121,7 +131,8 @@ public class IterativeTaskFile {
      * @return The file the result has been published to.
      * @throws IOException Shall be thrown if the target file could not be copied/created.
      */
-    public File finalizeAndReset(File targetFile, File targetDirectory) throws IOException {
+    @NotNull
+    public File finalizeAndReset(@Nullable File targetFile, @Nullable File targetDirectory) throws IOException {
         try {
             File lastProcessed = getLastProcessed();
 
@@ -145,6 +156,7 @@ public class IterativeTaskFile {
      *
      * @return The last processed file.
      */
+    @NotNull
     File getLastProcessed() {
         return currentTarget != null ? currentTarget : currentSource;
     }
@@ -178,7 +190,7 @@ public class IterativeTaskFile {
      *
      * @param file The file that shall be deleted.
      */
-    private void tryDelete(File file) {
+    private void tryDelete(@Nullable File file) {
         if (!originalSourceFile.equals(file) && file != null && file.exists() && file.isFile() && file.canWrite()) {
             FileUtils.deleteQuietly(file);
         }
@@ -187,11 +199,12 @@ public class IterativeTaskFile {
     /**
      * Attempts to publish the current group result to the Ant context using the given output var name.
      */
-    public void tryPublish(Variable variable) {
-        if (currentTarget != null && currentTarget.exists() && currentTarget.isFile() && currentTarget.canRead()) {
+    public void tryPublish(@Nullable Variable variable) {
+        if (variable != null && currentTarget != null && currentTarget.exists() && currentTarget.isFile() && currentTarget.canRead()) {
             variable.setValue(currentTarget.getAbsolutePath().replaceAll("\\\\", "/"));
             variable.execute();
             currentTarget = null;
         }
     }
+
 }

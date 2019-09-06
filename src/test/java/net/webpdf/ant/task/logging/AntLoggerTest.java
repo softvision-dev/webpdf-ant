@@ -70,7 +70,7 @@ public class AntLoggerTest {
     public void testInfoEmptyMsg() {
         logger.info(LogTag.OPERATION);
         assertEquals("[OPERATION] \n    [LOCATION] file:10: ", logMsg);
-        assertEquals(null, logT);
+        assertNull(logT);
         assertEquals(Project.MSG_INFO, logMsgLevel);
     }
 
@@ -78,7 +78,7 @@ public class AntLoggerTest {
     public void testInfo() {
         logger.info("msg", LogTag.OPERATION);
         assertEquals("[OPERATION] msg\n    [LOCATION] file:10: ", logMsg);
-        assertEquals(null, logT);
+        assertNull(logT);
         assertEquals(Project.MSG_INFO, logMsgLevel);
     }
 
@@ -95,7 +95,7 @@ public class AntLoggerTest {
     public void testWarnMsgOnly() {
         logger.warn("io error", LogTag.OPERATION);
         assertEquals("[WARN] [OPERATION] io error\n    [LOCATION] file:10: ", logMsg);
-        assertEquals(null, logT);
+        assertNull(logT);
         assertEquals(Project.MSG_WARN, logMsgLevel);
     }
 
@@ -113,8 +113,8 @@ public class AntLoggerTest {
         Exception ex = new IOException("io error");
         logger.error(ex, LogTag.OPERATION);
         try (
-                StringWriter stringWriter = new StringWriter();
-                PrintWriter printWriter = new PrintWriter(stringWriter)) {
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(stringWriter)) {
             ex.printStackTrace(printWriter);
             assertEquals("[ERROR] [OPERATION] io error\n" + stringWriter.toString() + "\n    [LOCATION] file:10: ", logMsg);
             assertEquals(ex, logT);
@@ -123,10 +123,10 @@ public class AntLoggerTest {
     }
 
     @Test
-    public void testErrorMessageOnly() throws Exception {
+    public void testErrorMessageOnly() {
         logger.error("errorMessage", LogTag.OPERATION);
         assertEquals("[ERROR] [OPERATION] errorMessage\n    [LOCATION] file:10: ", logMsg);
-        assertEquals(null, logT);
+        assertNull(logT);
         assertEquals(Project.MSG_ERR, logMsgLevel);
     }
 
@@ -135,8 +135,8 @@ public class AntLoggerTest {
         Exception ex = new IOException("io error");
         logger.error("errorMessage", ex, LogTag.OPERATION);
         try (
-                StringWriter stringWriter = new StringWriter();
-                PrintWriter printWriter = new PrintWriter(stringWriter)) {
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(stringWriter)) {
             ex.printStackTrace(printWriter);
             assertEquals("[ERROR] [OPERATION] errorMessage\n" + stringWriter.toString() + "\n    [LOCATION] file:10: ", logMsg);
             assertEquals(ex, logT);
@@ -149,8 +149,8 @@ public class AntLoggerTest {
         Exception ex = new IOException("io error");
         logger.error(ex, LogTag.OPERATION);
         try (
-                StringWriter stringWriter = new StringWriter();
-                PrintWriter printWriter = new PrintWriter(stringWriter)) {
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(stringWriter)) {
             ex.printStackTrace(printWriter);
             assertEquals("[ERROR] [OPERATION] io error\n" + stringWriter.toString() + "\n    [LOCATION] file:10: ", logMsg);
             assertEquals(ex, logT);
@@ -163,8 +163,8 @@ public class AntLoggerTest {
         Exception ex = new IOException(null, new IOException("io error"));
         logger.error(ex, LogTag.OPERATION);
         try (
-                StringWriter stringWriter = new StringWriter();
-                PrintWriter printWriter = new PrintWriter(stringWriter)) {
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter(stringWriter)) {
             ex.printStackTrace(printWriter);
             assertEquals("[ERROR] [OPERATION] io error\n" + stringWriter.toString() + "\n    [LOCATION] file:10: ", logMsg);
             assertEquals(ex, logT);
@@ -173,15 +173,10 @@ public class AntLoggerTest {
     }
 
     @Test
-    public void testNullThrowable() throws Exception {
-        Exception ex = null;
-        logger.error(ex, LogTag.OPERATION);
-        try (
-                StringWriter stringWriter = new StringWriter();
-                PrintWriter printWriter = new PrintWriter(stringWriter)) {
-            assertEquals("[ERROR] [OPERATION] \n    [LOCATION] file:10: ", logMsg);
-            assertEquals(ex, logT);
-            assertEquals(Project.MSG_ERR, logMsgLevel);
-        }
+    public void testNullThrowable() {
+        logger.error((Exception)null, LogTag.OPERATION);
+        assertEquals("[ERROR] [OPERATION] \n    [LOCATION] file:10: ", logMsg);
+        assertNull(logT);
+        assertEquals(Project.MSG_ERR, logMsgLevel);
     }
 }

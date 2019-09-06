@@ -3,7 +3,6 @@ package net.webpdf.ant.task.credentials;
 import net.webpdf.ant.WebPDFTask;
 import org.apache.http.auth.Credentials;
 import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.tools.ant.BuildException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -38,20 +37,20 @@ public class CredentialsFactoryTest {
         assertEquals("Domain should have been 'DOMAIN'.", "DOMAIN", ntAuthCredentials.getDomain());
     }
 
-    @Test(expected = BuildException.class)
+    @Test
     public void createInvalidUserCredentials() {
         UserCredentials userCredentials = new UserCredentials();
         userCredentials.setUsername(null);
         userCredentials.setPassword(null);
-        CredentialsFactory.produceCredentials(userCredentials);
+        assertNull(CredentialsFactory.produceCredentials(userCredentials));
     }
 
-    @Test(expected = BuildException.class)
+    @Test
     public void createInvalidNTCredentials() {
         NTCredentials ntCredentials = new NTCredentials();
         ntCredentials.setUsername(null);
         ntCredentials.setPassword(null);
-        CredentialsFactory.produceCredentials(ntCredentials);
+        assertNull(CredentialsFactory.produceCredentials(ntCredentials));
     }
 
     @Test

@@ -43,7 +43,7 @@ public class VariableMapTest {
     }
 
     @Test
-    public void testVariableMapping() throws Exception {
+    public void testVariableMapping() {
         VariableMap variableMap = new VariableMap(owningTask);
         Variable out = new Variable();
         out.setName("out");
@@ -66,7 +66,11 @@ public class VariableMapTest {
         assertTrue(variableMap.isRoleTaken(VariableRole.INPUT));
 
         assertNull(variableMap.getVar(null));
-        assertEquals("out2", variableMap.getVar(VariableRole.OUTPUT).getValue());
-        assertEquals("in", variableMap.getVar(VariableRole.INPUT).getValue());
+        Variable output = variableMap.getVar(VariableRole.OUTPUT);
+        assertNotNull(output);
+        assertEquals("out2", output.getValue());
+        Variable input = variableMap.getVar(VariableRole.INPUT);
+        assertNotNull(input);
+        assertEquals("in", input.getValue());
     }
 }

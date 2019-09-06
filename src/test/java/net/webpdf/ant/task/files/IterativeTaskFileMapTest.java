@@ -17,12 +17,13 @@ import java.util.Iterator;
 
 import static org.junit.Assert.*;
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class IterativeTaskFileMapTest {
     private net.webpdf.ant.task.files.IterativeTaskFileMap iterativeTaskFileMap;
     private FileNameMapper preparedMapper;
 
     @Before
-    public void prepare() throws Exception {
+    public void prepare() {
         this.iterativeTaskFileMap = new IterativeTaskFileMap();
         preparedMapper = new FileNameMapper() {
             @Override
@@ -51,8 +52,7 @@ public class IterativeTaskFileMapTest {
     public void testSetTempDir() {
         File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
         iterativeTaskFileMap.setTempDir(tempDirectory);
-        assertTrue("TempDir should have been initialized",
-            iterativeTaskFileMap.getTempDir() != null && iterativeTaskFileMap.getTempDir().getTempDir().exists());
+        assertTrue("TempDir should have been initialized", iterativeTaskFileMap.getTempDir().getTempDir().exists());
     }
 
     @Test(expected = BuildException.class)
@@ -299,7 +299,6 @@ public class IterativeTaskFileMapTest {
         iterativeTaskFileMap.setTempDir(tempDir.getTempDir());
 
         try {
-            Project project = new Project();
             Variable sourceVar = new Variable();
             sourceVar.setName("source");
             sourceVar.setValue(sourceFile.getAbsolutePath());
@@ -330,7 +329,6 @@ public class IterativeTaskFileMapTest {
         iterativeTaskFileMap.setTempDir(tempDir.getTempDir());
 
         try {
-            Project project = new Project();
             Variable sourceVar = new Variable();
             sourceVar.setName("source");
             sourceVar.setValue(sourceFile.getAbsolutePath());
@@ -359,7 +357,6 @@ public class IterativeTaskFileMapTest {
         iterativeTaskFileMap.setTempDir(tempDir.getTempDir());
 
         try {
-            Project project = new Project();
             Variable sourceVar = new Variable();
             sourceVar.setName("source");
             sourceVar.setValue("NonExistentFile.non");

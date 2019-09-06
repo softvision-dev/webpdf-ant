@@ -14,6 +14,8 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.TaskContainer;
 import org.apache.tools.ant.types.ResourceCollection;
 import org.apache.tools.ant.util.FileNameMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +27,8 @@ import java.util.List;
  * connect to the webPDF server and shall share those connection details with all contained sub tasks.
  */
 public class WebPDFTask extends Task implements TaskContainer {
+
+    @NotNull
     private final List<org.apache.tools.ant.Task> tasks = new ArrayList<>();
 
     /**
@@ -64,12 +68,12 @@ public class WebPDFTask extends Task implements TaskContainer {
                         getTaskConfiguration().getTaskFiles().getTargetFile(),
                         getTaskConfiguration().getTaskFiles().getTargetDirectory()
                     );
-                    if (getVariables().isRoleTaken(VariableRole.OUTPUT)) {
-                        Variable targetVar = getVariables().getVar(VariableRole.OUTPUT);
+                    Variable targetVar = getVariables().getVar(VariableRole.OUTPUT);
+                    if (targetVar != null) {
                         targetVar.setValue(target.getAbsolutePath().replaceAll("\\\\", "/"));
                         targetVar.execute();
                     }
-                    getLogger().info("Write to " + (target != null ? target.getAbsolutePath() : "FILE NAME UNKNOWN"), LogTag.TARGET);
+                    getLogger().info("Write to " + (target.getAbsolutePath()), LogTag.TARGET);
                 } catch (IOException ex) {
                     String message = "Creation of the final target file failed.";
                     getLogger().error(message, ex, LogTag.WEBPDF_TASK);
@@ -84,7 +88,7 @@ public class WebPDFTask extends Task implements TaskContainer {
     /**
      * Process a single sub task.
      */
-    private void processTask(org.apache.tools.ant.Task task, IterativeTaskFile taskFile) throws BuildException {
+    private void processTask(@Nullable org.apache.tools.ant.Task task, @Nullable IterativeTaskFile taskFile) throws BuildException {
         if (task instanceof GroupTask) {
             GroupTask group = (GroupTask) task;
             try {
@@ -92,14 +96,16 @@ public class WebPDFTask extends Task implements TaskContainer {
                 task.execute();
             } catch (BuildException ex) {
                 if (getTaskConfiguration().isFailOnError()) {
-                    taskFile.reset();
+                    if (taskFile != null) {
+                        taskFile.reset();
+                    }
                     getLogger().error(ex, LogTag.WEBPDF_TASK);
                     throw ex;
                 } else {
                     getLogger().warn(ex, LogTag.WEBPDF_TASK);
                 }
             }
-        } else {
+        } else if (task != null) {
             task.reconfigure();
             task.execute();
         }
@@ -113,7 +119,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      */
     @Override
     @AntAccess
-    public void addTask(org.apache.tools.ant.Task task) {
+    public void addTask(@Nullable org.apache.tools.ant.Task task) {
         if (task instanceof OperationTask) {
             if (getTaskConfiguration().isFailOnError()) {
                 throw new BuildException("A webPDF task may not contain operations directly.");
@@ -134,8 +140,10 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param resourceCollection A collection of resources, that shall be processed by this task.
      */
     @AntAccess
-    public void add(ResourceCollection resourceCollection) {
-        getTaskConfiguration().getTaskFiles().add(resourceCollection);
+    public void add(@Nullable ResourceCollection resourceCollection) {
+        if (resourceCollection != null) {
+            getTaskConfiguration().getTaskFiles().add(resourceCollection);
+        }
     }
 
     /**
@@ -148,7 +156,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param fileNameMapper The mapper defining naming conventions for target files of this task.
      */
     @AntAccess
-    public void add(FileNameMapper fileNameMapper) {
+    public void add(@Nullable FileNameMapper fileNameMapper) {
         getTaskConfiguration().getTaskFiles().setMapper(fileNameMapper);
     }
 
@@ -161,9 +169,11 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param task A group task containing a sequence of webservice operations.
      */
     @AntAccess
-    public void add(GroupTask task) {
-        task.setTaskConfiguration(getTaskConfiguration());
-        tasks.add(task);
+    public void add(@Nullable GroupTask task) {
+        if (task != null) {
+            task.setTaskConfiguration(getTaskConfiguration());
+            tasks.add(task);
+        }
     }
 
     /**
@@ -172,7 +182,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param credentials The credentials task containing all necessary authentication information.
      */
     @AntAccess
-    public void add(UserCredentials credentials) {
+    public void add(@Nullable UserCredentials credentials) {
         getTaskConfiguration().setCredentialsTask(credentials);
     }
 
@@ -183,7 +193,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param credentials The credentials task containing all necessary authentication information.
      */
     @AntAccess
-    public void add(NTCredentials credentials) {
+    public void add(@Nullable NTCredentials credentials) {
         getTaskConfiguration().setCredentialsTask(credentials);
     }
 
@@ -194,8 +204,10 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param variable The variable, that shall be added.
      */
     @AntAccess
-    public final void add(Variable variable) {
-        getVariables().add(variable);
+    public final void add(@Nullable Variable variable) {
+        if (variable != null) {
+            getVariables().add(variable);
+        }
     }
 
     /**
@@ -223,7 +235,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param serverUrl An URL pointing to the webPDF server
      */
     @AntAccess
-    public void setServerUrl(String serverUrl) {
+    public void setServerUrl(@Nullable String serverUrl) {
         getTaskConfiguration().setServerUrl(serverUrl);
     }
 
@@ -237,7 +249,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param targetDir The path operation results shall be placed at.
      */
     @AntAccess
-    public void setTargetDir(File targetDir) {
+    public void setTargetDir(@Nullable File targetDir) {
         String path = targetDir != null ? targetDir.getAbsolutePath() : " ";
         if (targetDir == null || !targetDir.exists() || !targetDir.canWrite() || !targetDir.isDirectory()) {
             String errorMessage = String.format("The given target directory could not be accessed. %s", path);
@@ -256,7 +268,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param targetFile The file results shall be published to.
      */
     @AntAccess
-    public void setTargetFile(File targetFile) {
+    public void setTargetFile(@Nullable File targetFile) {
         getTaskConfiguration().getTaskFiles().setTargetFile(targetFile);
     }
 
@@ -270,7 +282,7 @@ public class WebPDFTask extends Task implements TaskContainer {
      * @param tempDir The directory temporary results, of non terminal operation calls, shall be published to.
      */
     @AntAccess
-    public void setTempDir(File tempDir) {
+    public void setTempDir(@Nullable File tempDir) {
         String path = tempDir != null ? tempDir.getAbsolutePath() : " ";
         if (tempDir == null || !tempDir.exists() || !tempDir.canWrite() || !tempDir.isDirectory()) {
             String errorMsg = String.format("The given temporary directory could not be accessed. %s", path);
@@ -279,4 +291,5 @@ public class WebPDFTask extends Task implements TaskContainer {
         }
         getTaskConfiguration().getTaskFiles().setTempDir(tempDir);
     }
+
 }
