@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="sanitizeExample" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="org.apache.tools.ant.launch.Launcher" />
+    <module name="webpdf-ant" />
+    <option name="PROGRAM_PARAMETERS" value="-buildfile sanitize.xml" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+    <method v="2" />
+  </configuration>
+</component>

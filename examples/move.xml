@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="attachFileExample" default="test" basedir="."
+         xmlns:webpdf="http://schema.webpdf.de/1.0/operation"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://schema.webpdf.de/1.0/operation http://schema.webpdf.de/1.0/operation/operation.xsd">
+
+    <taskdef resource="antlib.xml"
+             classpath="../build/webpdf-ant-0.9.0.jar"/>
+
+    <property name="webPDFUrl" value="http://localhost:8080/webPDF"/>
+    <property name="usr" value="admin"/>
+    <property name="pwd" value="admin"/>
+    <property name="tempDir" value="data/output/temp"/>
+    <property name="targetDir" value="data/output/out"/>
+    <path id="basedir.path">
+        <pathelement path="${basedir}"/>
+    </path>
+    <pathconvert targetos="unix" property="basedir.unix" refid="basedir.path"/>
+    <property name="testFile" value="${basedir.unix}/data/input/B.pdf"/>
+
+    <!-- selecting, converting and attaching single files -->
+    <target name="test">
+        <!-- clean output folder -->
+        <delete dir="data/output/out"/>
+        <mkdir dir="data/output/out"/>
+        <delete dir="data/output/temp"/>
+        <mkdir dir="data/output/temp"/>
+
+        <!-- Locate and configure webPDF server and execution context. -->
+        <webpdf serverurl="${webPDFUrl}" tempdir="${tempDir}" targetdir="${targetDir}" failonerror="true">
+            <usercredentials username="${usr}" password="${pwd}"/>
+            <!-- select a single file as a resource for the webPDF task -->
+            <file file="${testFile}"/>
+            <!-- configure a name mapping from source name to target name -->
+            <globmapper from="*.pdf" to="*.pdf"/>
+            <group>
+                <!-- flip pages 1 and 2 -->
+                <webpdf:operation>
+                    <webpdf:move pages="1-2" mode="beforePage" order="reverse" targetPosition="3"/>
+                </webpdf:operation>
+            </group>
+            <!-- When terminating the webPDF task will write the final result to a target file, according to the
+             selected target directory and name mapping -->
+        </webpdf>
+        <!-- After the execution of this target, you should find new results in "tests\data\output\out" -->
+    </target>
+</project>

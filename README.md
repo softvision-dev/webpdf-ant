@@ -5,7 +5,7 @@ This repository defines an Ant task, which can be used to call the webPDF SOAP w
 
 [webPDF](https://www.webpdf.de/) is a commercial multi-platform server solution for creating and processing PDF documents. To use the webPDF Ant tasks, a running webPDF installation is required. A demo version as Windows installation, Linux package or as a virtual machine can be downloaded from the [product page](https://www.webpdf.de/en/download-web-pdf.html).
 
-> **Note**: Unless otherwise marked, the following is based on webPDF version 7 or newer.
+> **Note**: Unless otherwise marked, the following is based on webPDF version 8 or newer.
 
 ## Download
 You can use this library, by adding this dependency to your project:
@@ -14,7 +14,7 @@ You can use this library, by adding this dependency to your project:
 <dependency>
     <groupId>net.webpdf</groupId>
     <artifactId>webpdf-ant</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
@@ -34,3 +34,7 @@ Learn even more about our product in our [webPDF Documentation](https://www.webp
 
 ## License
 Please, see the [license](LICENSE) file for more information.
+
+## Changes
+The current version 2.0.0 is optimized for webPDF version 8. When using webPDF 7 you might prefer the version 1.0.0 of this library.
+You might want to have a look at the [changes](CHANGES.md) file for further information.
