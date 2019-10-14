@@ -139,6 +139,7 @@
                             <serverId>oss-sonatype-repo</serverId>
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                            <stagingProgressTimeoutMinutes>120</stagingProgressTimeoutMinutes>
                         </configuration>
                     </plugin>
                 </plugins>
